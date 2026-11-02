@@ -1,9 +1,12 @@
 import suaveSmall from '../assets/images/profiles/suave-480.webp';
 import suaveLarge from '../assets/images/profiles/suave-960.webp';
+import suaveThumbnail from '../assets/images/profiles/suave-192.webp';
 import intensoSmall from '../assets/images/profiles/intenso-480.webp';
 import intensoLarge from '../assets/images/profiles/intenso-960.webp';
+import intensoThumbnail from '../assets/images/profiles/intenso-192.webp';
 import aromaticoSmall from '../assets/images/profiles/aromatico-480.webp';
 import aromaticoLarge from '../assets/images/profiles/aromatico-960.webp';
+import aromaticoThumbnail from '../assets/images/profiles/aromatico-192.webp';
 import type { CoffeeProfile, CoffeeProfileId } from '../types/coffee';
 
 export const profileContent = {
@@ -18,6 +21,7 @@ export const profileContent = {
   notesExplanation: 'As notas são referências sensoriais, não ingredientes adicionados.',
   rememberLabel: 'Lembrar minha escolha neste dispositivo',
   nextLabel: 'Continue pelo mapa de aromas',
+  imageError: 'Esta imagem não carregou. Seu perfil continua selecionado e você pode seguir explorando.',
   storageMessages: {
     session: 'Sua escolha fica só nesta visita.',
     waiting: 'Escolha uma atmosfera para guardar neste dispositivo.',
@@ -36,7 +40,7 @@ export const coffeeProfiles = [
     notes: ['Flores brancas', 'Jasmim', 'Camomila'],
     affection: 'Você encontra beleza nos detalhes: no aroma que chega devagar, na luz sobre a mesa e no primeiro gole sem pressa.',
     image: {
-      small: suaveSmall, smallWidth: 480, large: suaveLarge, width: 960, height: 1200,
+      thumbnail: suaveThumbnail, small: suaveSmall, smallWidth: 480, large: suaveLarge, width: 960, height: 1200,
       alt: 'Xícara clara de café sobre linho creme, ao lado de pequenas flores brancas e luz suave.',
       caption: 'Luz tranquila, flores e espaço para respirar.',
       credit: { label: 'COFFE LOVERS · imagem própria', href: '#perfis' },
@@ -49,7 +53,7 @@ export const coffeeProfiles = [
     notes: ['Chocolate amargo', 'Cacau', 'Castanhas'],
     affection: 'Sua pausa tem personalidade. Há conforto no que envolve, no sabor que permanece e em um instante vivido por inteiro.',
     image: {
-      small: intensoSmall, smallWidth: 480, large: intensoLarge, width: 960, height: 1200,
+      thumbnail: intensoThumbnail, small: intensoSmall, smallWidth: 480, large: intensoLarge, width: 960, height: 1200,
       alt: 'Espresso com crema em uma xícara escura, com pedaços de chocolate e grãos de café ao lado.',
       caption: 'Profundidade, calor e um aroma que permanece.',
       credit: { label: 'COFFE LOVERS · imagem própria', href: '#perfis' },
@@ -62,7 +66,7 @@ export const coffeeProfiles = [
     notes: ['Frutas amarelas', 'Frutas vermelhas', 'Flores'],
     affection: 'Sua curiosidade também faz parte do ritual. Você deixa espaço para uma nova nota, uma lembrança inesperada e um caminho que ainda não conhece.',
     image: {
-      small: aromaticoSmall, smallWidth: 480, large: aromaticoLarge, width: 960, height: 1200,
+      thumbnail: aromaticoThumbnail, small: aromaticoSmall, smallWidth: 480, large: aromaticoLarge, width: 960, height: 1200,
       alt: 'Xícara de café em cerâmica caramelo sobre linho oliva, com pêssego, frutas vermelhas e uma flor ao lado.',
       caption: 'Entre frutas, flores e a vontade de descobrir.',
       credit: { label: 'COFFE LOVERS · imagem própria', href: '#perfis' },

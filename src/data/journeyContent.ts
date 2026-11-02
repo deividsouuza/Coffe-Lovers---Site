@@ -9,6 +9,7 @@ import roastLarge from '../assets/images/discovery/roast-1120.webp';
 import extractionSmall from '../assets/images/discovery/espresso-560.webp';
 import extractionLarge from '../assets/images/discovery/espresso-1120.webp';
 import cupSmall from '../assets/images/hero-coffee-480.webp';
+import cupMedium from '../assets/images/hero-coffee-800.webp';
 import cupLarge from '../assets/images/hero-coffee-1120.webp';
 import type { JourneyStage } from '../types/coffee';
 
@@ -90,7 +91,8 @@ export const journeyStages = [
     thought: 'Tudo o que veio antes encontra, agora, o seu momento.',
     beanColor: '#5a2e1f',
     image: {
-      small: cupSmall, smallWidth: 480, large: cupLarge, width: 1120, height: 1400,
+      small: cupSmall, smallWidth: 480, medium: cupMedium, mediumWidth: 800,
+      large: cupLarge, width: 1120, height: 1400,
       alt: 'Café pronto em uma xícara artesanal, com crema dourada e vapor suave.',
       caption: 'Da origem até aqui. Um convite para sentir.',
       credit: { label: 'COFFE LOVERS · imagem própria', href: '#inicio' },

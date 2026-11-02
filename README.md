@@ -4,6 +4,9 @@ Experiência editorial sobre café, criada para acompanhar a pausa de quem visit
 uma cafeteria. Aplicação React + Vite + TypeScript, em português brasileiro,
 com seis momentos integrados em uma única página.
 
+Revisão técnica mobile, medições de rede e relatório Lighthouse:
+[docs/revisao-mobile.md](docs/revisao-mobile.md).
+
 ## Executar
 
 Use Node.js 22.12 ou superior (verificado com Node.js 24.18.0) e npm.
@@ -74,6 +77,7 @@ vite.config.ts
 tsconfig*.json
 package.json
 package-lock.json
+public/                   # Favicon SVG e robots.txt
 ```
 
 ## Limites desta etapa
@@ -185,6 +189,21 @@ O vapor final permanece breve. Movimento reduzido interrompe também transiçõe
 CSS em andamento. Nenhuma biblioteca de smooth scrolling foi adicionada.
 
 Contratos, arquivos e verificações: [docs/motion-design.md](docs/motion-design.md).
+
+## Carregamento mobile
+
+O Hero é descoberto por preload responsivo e tem prioridade alta. Hero e xícara
+da Jornada compartilham candidatos de 480/800 px no mobile; o divisor decorativo
+fica em 640 px. Perfis solicita somente as cenas escolhidas e usa miniaturas de
+192 px nos seletores. A foto anterior permanece enquanto a próxima carrega.
+Todos os assets são locais; imagens não essenciais mantêm lazy loading e dimensões
+reservadas. GSAP continua em chunk separado, carregado perto da Jornada.
+
+Build e TypeScript passaram. A revisão cobriu 360, 390, 430, 768, 1024 e 1440 px,
+teclado, alvos de pelo menos 44 px, movimento reduzido e axe com regras WCAG 2.1 A
+incluídas. Rede lenta, falha/atraso de fotografia, texto a 200% e menu em landscape
+foram simulados no Chrome. Resultados Lighthouse e limitações estão no relatório
+da revisão; testes em dispositivos físicos e em produção ainda não foram executados.
 
 ## Conferência manual
 

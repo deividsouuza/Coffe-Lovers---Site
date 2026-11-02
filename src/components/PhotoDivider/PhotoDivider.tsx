@@ -6,8 +6,11 @@ import styles from './PhotoDivider.module.css';
 export function PhotoDivider() {
   return (
     <div className={styles.frame} aria-hidden="true">
-      <img src={coffeeLarge} srcSet={`${coffeeSmall} 640w, ${coffeeLarge} 1600w`}
-        sizes="100vw" width="1600" height="640" alt="" loading="lazy" decoding="async" />
+      <picture>
+        <source media="(max-width: 767px)" srcSet={coffeeSmall} />
+        <img src={coffeeLarge} srcSet={`${coffeeSmall} 640w, ${coffeeLarge} 1600w`}
+          sizes="100vw" width="1600" height="640" alt="" loading="lazy" decoding="async" />
+      </picture>
     </div>
   );
 }

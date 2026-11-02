@@ -22,7 +22,7 @@ export function ProfileSelector({ selectedId, onSelect }: ProfileSelectorProps) 
               aria-label={profile.title} aria-describedby={`${groupId}-${profile.id}-hint`} aria-controls="perfil-resultado" />
             <span className={styles.optionContent}>
               <span className={styles.optionImage} aria-hidden="true">
-                <img src={profile.image.small} alt="" width="480" height="600" loading="lazy" decoding="async" />
+                <img src={profile.image.thumbnail} alt="" width="192" height="240" loading="lazy" decoding="async" />
                 <span className={styles.optionCheck} />
               </span>
               <span className={styles.optionCopy}>

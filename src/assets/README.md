@@ -49,6 +49,17 @@ CC BY-SA 4.0; as demais são fornecidas sob a licença Unsplash.
 Autoria, URLs originais, licenças e alterações:
 [images/discovery/CREDITS.md](images/discovery/CREDITS.md).
 
+## Revisão mobile
+
+O Hero possui preload responsivo no HTML, `fetchPriority="high"` e carregamento
+eager. Em telas até 767 px, usa candidatos de 480/800 px. A xícara da Jornada
+compartilha os mesmos candidatos e o cache; desktop conserva a opção de 1120 px.
+O divisor decorativo usa a versão de 640 px no mobile, incluindo telas de alta
+densidade. Perfis usa miniaturas de 192 px e solicita cenas grandes por escolha.
+Os demais assets mantêm dimensões, WebP local e lazy loading nativo.
+
+Medições e limites da auditoria: [revisao-mobile.md](../../docs/revisao-mobile.md).
+
 ## Jornada do café
 
 `images/journey/` acrescenta fotografias reais de cultivo, colheita e secagem,

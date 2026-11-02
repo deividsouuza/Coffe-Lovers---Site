@@ -2,14 +2,17 @@
 
 Três assets criados com a ferramenta integrada `image_gen` da skill imagegen,
 sem CLI de geração. Os originais foram preservados no diretório de geração;
-os seis derivados consumidos pelo site ficam nesta pasta.
+os derivados consumidos pelo site ficam nesta pasta.
 
 | Perfil | Arquivo | Dimensões | Peso |
 | --- | --- | --- | --- |
+| Suave · miniatura | `suave-192.webp` | 192 × 240 | 7.850 bytes |
 | Suave | `suave-480.webp` | 480 × 600 | 37.802 bytes |
 | Suave | `suave-960.webp` | 960 × 1200 | 107.544 bytes |
+| Intenso · miniatura | `intenso-192.webp` | 192 × 240 | 4.600 bytes |
 | Intenso | `intenso-480.webp` | 480 × 600 | 24.038 bytes |
 | Intenso | `intenso-960.webp` | 960 × 1200 | 76.994 bytes |
+| Aromático · miniatura | `aromatico-192.webp` | 192 × 240 | 6.406 bytes |
 | Aromático | `aromatico-480.webp` | 480 × 600 | 35.656 bytes |
 | Aromático | `aromatico-960.webp` | 960 × 1200 | 112.784 bytes |
 
@@ -22,6 +25,12 @@ compressão WebP. O projeto não recebeu dependências novas. Thumbnails são
 decorativos, e a imagem principal ativa tem alt descritivo; imagens inativas
 ficam fora da árvore de acessibilidade. Os arquivos são locais, responsivos
 e carregados com lazy loading.
+
+A revisão mobile adicionou as miniaturas de 192 px a partir dos WebPs existentes,
+com redimensionamento proporcional e qualidade 76. Os seletores deixam de baixar
+480 px para mostrar 64–76 px. Cenas grandes entram no DOM apenas quando necessárias;
+a foto anterior permanece durante uma carga lenta. Os prompts originais abaixo
+permanecem preservados, sem nova geração de fotografias.
 
 ## Prompts finais
 

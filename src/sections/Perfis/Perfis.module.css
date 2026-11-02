@@ -65,6 +65,7 @@
 .sceneFrame { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border); border-radius: 44% 44% 2px 2px / 16% 16% 2px 2px; background: var(--color-beige); }
 .sceneImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 65%; opacity: 0; transition: opacity var(--motion-duration-scene) var(--ease-out); }
 .sceneImage[data-visible='true'] { z-index: 1; opacity: 1; }
+.imageStatus { position: absolute; z-index: 2; inset: auto var(--space-sm) var(--space-sm); margin: 0; padding: var(--space-sm); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); font-size: var(--text-sm); line-height: 1.6; }
 .motif { position: absolute; right: 0; bottom: 2.75rem; width: 78px; height: 78px; color: var(--motif-ink); pointer-events: none; }
 .motif svg { width: 100%; height: 100%; }
 .caption { display: grid; gap: var(--space-2xs); margin-top: var(--space-sm); padding-right: var(--space-xl); color: var(--ink-muted); font-size: var(--text-xs); line-height: 1.7; }

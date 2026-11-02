@@ -11,9 +11,10 @@ export function SiteHeader() {
   return (
     <header ref={headerRef} className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <a ref={desktopFocusRef} className={styles.brand} href={`#${siteContent.hero.id}`} aria-label={`${siteContent.name} — início`}>
+        <a ref={desktopFocusRef} className={styles.brand} href={`#${siteContent.hero.id}`}>
           <span>COFFE <span className={styles.brandLast}>LOVERS</span></span>
           <span className={styles.brandCaption}>Histórias em cada xícara</span>
+          <span className="visuallyHidden"> — início</span>
         </a>
         <nav className={styles.desktopNav} aria-label="Navegação principal">
           <ul className={styles.navigation}>

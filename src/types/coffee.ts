@@ -28,6 +28,8 @@ export interface ContentSource {
 export interface EditorialImage {
   readonly small: string;
   readonly smallWidth?: number;
+  readonly medium?: string;
+  readonly mediumWidth?: number;
   readonly large: string;
   readonly width: number;
   readonly height: number;
@@ -65,5 +67,5 @@ export interface CoffeeProfile extends ContentItem {
   readonly atmosphere: string;
   readonly notes: readonly string[];
   readonly affection: string;
-  readonly image: EditorialImage;
+  readonly image: EditorialImage & { readonly thumbnail: string };
 }

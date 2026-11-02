@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2B130D" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Os candidatos e sizes acompanham HeroVisual; mobile não baixa a versão desktop. -->
+    <link rel="preload" as="image" href="/src/assets/images/hero-coffee-800.webp"
+      media="(max-width: 767px)" fetchpriority="high"
+      imagesrcset="/src/assets/images/hero-coffee-480.webp 480w, /src/assets/images/hero-coffee-800.webp 800w"
+      imagesizes="(min-width: 640px) 480px, calc(100vw - 40px)" />
+    <link rel="preload" as="image" href="/src/assets/images/hero-coffee-800.webp"
+      media="(min-width: 768px)" fetchpriority="high"
+      imagesrcset="/src/assets/images/hero-coffee-480.webp 480w, /src/assets/images/hero-coffee-800.webp 800w, /src/assets/images/hero-coffee-1120.webp 1120w"
+      imagesizes="(min-width: 1440px) 540px, (min-width: 1024px) 42vw, (min-width: 640px) 480px, calc(100vw - 40px)" />
     <meta
       name="description"
       content="Explore o universo do café: histórias, aromas e uma jornada do cultivo à xícara. Cada xícara conta uma história — e você faz parte dela."

@@ -39,6 +39,12 @@ de localStorage são protegidas por try/catch. Sem opt-in, não escreve dados.
 Ao desativar a memória, remove apenas sua própria chave. Falhas no armazenamento
 não impedem a seleção em React e são informadas pelo componente de memória.
 
+`useProfileImages` carrega somente a cena inicial e as cenas escolhidas. A última
+fotografia pronta permanece visível até a nova terminar de carregar. A conclusão
+de uma requisição antiga não substitui a escolha atual. Imagens visitadas são
+reaproveitadas; uma falha preserva a seleção e informa o visitante. Os eventos
+`load`/`error` pertencem aos elementos React, sem listeners globais ou timers.
+
 `useAromaExplorer` permite alternar entre seis aromas ou limpar a escolha. Mantém
 referências dos acionadores para devolver o foco ao fechar o painel e trata Escape
 apenas dentro da seção. A seleção fica em memória, sem persistência nem listeners

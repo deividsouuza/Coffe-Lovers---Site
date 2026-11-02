@@ -45,7 +45,7 @@
 .imageMotion { position: absolute; inset: -6%; }
 .imageMotion img { width: 100%; height: 100%; object-fit: cover; }
 .caption { display: grid; gap: var(--space-2xs); margin-top: var(--space-sm); color: var(--ink-muted); font-size: var(--text-xs); line-height: 1.6; }
-.caption a { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; min-height: 24px; }
+.caption a { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; min-height: 44px; }
 .step[data-phase='cultivation'] .imageFrame { border-radius: 44% 44% 2px 2px / 18% 18% 2px 2px; }
 .step[data-phase='processing'] .imageFrame { aspect-ratio: 16 / 10; }
 .step[data-phase='roast'] .imageFrame { border-radius: 2px 35% 2px 2px / 2px 20% 2px 2px; }
