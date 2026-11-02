@@ -43,7 +43,8 @@ src/
   data/
     coffeeContent.ts      # Curiosidades, jornada, perfis e notas aromáticas
     siteContent.ts        # Textos das seções e navegação
-  hooks/                  # Comportamento acessível do menu mobile
+    heroContent.ts        # Conteúdo editorial e acessível do Hero
+  hooks/                  # Menu mobile, altura do header e movimento do Hero
   sections/
     Hero/
     Curiosidades/
@@ -68,9 +69,9 @@ package-lock.json
 
 ## Limites desta etapa
 
-Esta é a fundação técnica com o design system editorial e o header responsivo.
-As seis seções conservam seus conteúdos introdutórios; a composição completa
-do Hero, quiz, revelações e animações narrativas ficam para próximos prompts.
+Esta é a fundação técnica com o design system editorial, header responsivo e
+Hero cinematográfico. As outras cinco seções conservam seus conteúdos introdutórios;
+quiz, revelações e animações da jornada ficam para próximos prompts.
 Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
 aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
@@ -81,7 +82,18 @@ receber fontes verificadas ao serem desenvolvidas.
 CSS Modules isolam os estilos dos componentes. Cormorant Garamond e DM Sans
 usam arquivos variáveis locais, sem requisições a serviços de fontes em runtime.
 A fotografia decorativa tem versões WebP de 640 e 1600 px e carregamento lazy.
-Não foram adicionadas dependências de produção nesta etapa.
+A fotografia própria do Hero usa versões WebP de 480, 800 e 1120 px, com prioridade
+de carregamento e texto alternativo. Não foram adicionadas dependências de produção.
+
+## Hero
+
+Composição vertical no mobile e assimétrica no desktop, em fundo espresso.
+O conteúdo usa HTML; a fotografia é um asset próprio, sem textos incorporados.
+A entrada suave, o vapor e a reação da foto ao scroll respeitam a preferência
+de movimento reduzido. O visitante também pode pausar os movimentos pelo botão
+da seção. A seta navega para Curiosidades, mantendo foco e destino visíveis.
+
+Implementação, prompt do asset e verificações: [docs/hero.md](docs/hero.md).
 
 ## Design system
 
@@ -105,6 +117,15 @@ padrões de largura, rótulo editorial e texto introdutório.
   Transições e deslocamentos dos indicadores também são desativados.
 - No mobile, abra o menu e confira Tab/Shift+Tab, Escape, Fechar e navegação.
 - Abra o menu e amplie a janela até 1024 px: o diálogo fecha e o foco vai para a marca.
+- No Hero, confira Pausar movimentos, Retomar movimentos e a navegação pela seta.
+
+## Verificações da etapa do Hero
+
+TypeScript e build passaram. Hero verificado em Chrome headless nas larguras
+360, 390, 430, 1024, 1440 e 1920 px, sem overflow ou sobreposição de texto e imagem.
+Foram conferidos os textos obrigatórios, a âncora, o foco, o carregamento responsivo,
+movimento reduzido, paralaxe real, pausa, retomada e pausa fora da viewport.
+As análises automáticas axe não encontraram violações nas amostras verificadas.
 
 ## Verificações da etapa de design system
 

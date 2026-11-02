@@ -1,12 +1,13 @@
 import type { SectionContent } from '../types/coffee';
+import { heroContent } from './heroContent';
 
 export const siteContent = {
   name: 'COFFE LOVERS',
   hero: {
     id: 'inicio',
-    eyebrow: 'Uma pausa. Muitas descobertas.',
-    title: 'Cada xícara conta uma história — e você faz parte dela.',
-    description: 'Sinta-se em casa. Reserve um instante para explorar o universo do café, seguir novos caminhos e descobrir o que faz a sua pausa especial.',
+    eyebrow: heroContent.eyebrow,
+    title: heroContent.titleLines.join(' '),
+    description: heroContent.subtitle,
   },
   curiosidades: {
     id: 'curiosidades',

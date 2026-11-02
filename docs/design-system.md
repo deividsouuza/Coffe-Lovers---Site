@@ -1,8 +1,9 @@
 # Design system · COFFE LOVERS
 
 Identidade editorial baseada em contraste, espaço e tipografia. Esta etapa aplica
-o sistema à estrutura existente, mantendo as composições completas das seções
-para os próximos prompts. A imagem de referência não estava disponível nesta
+o sistema à estrutura existente; o Hero já possui composição própria, documentada
+em [hero.md](hero.md). As demais seções aguardam seus próximos prompts.
+A imagem de referência não estava disponível nesta
 conversa; a direção segue o briefing textual e a paleta fornecida.
 
 ## Tokens e temas
@@ -85,4 +86,5 @@ move o foco para a seção. A rolagem do documento é restaurada no fechamento.
 
 Foco usa contorno de 2 px adaptado ao tema. A seleção usa bege e espresso.
 `prefers-reduced-motion` desativa a rolagem suave, transições e deslocamentos.
-Não há animações narrativas nem implementação completa do Hero nesta etapa.
+O Hero usa uma composição própria, com movimentos leves e controle de pausa.
+Os detalhes de implementação e validação estão em [hero.md](hero.md).

@@ -26,3 +26,14 @@ Os derivados WebP usam `fit=crop`, proporção 5:2, larguras de 640 e 1600 px,
 qualidade 75 e 80. São servidos pelo próprio site via `srcSet`, sem hotlink no runtime.
 O componente reserva a altura e usa `loading="lazy"`, `decoding="async"` e `alt=""`,
 pois a imagem é decorativa e não acrescenta informação à narrativa.
+
+## Asset próprio do Hero
+
+`hero-coffee-480.webp`, `hero-coffee-800.webp` e `hero-coffee-1120.webp` são versões
+otimizadas do asset gerado para o projeto com a ferramenta integrada image_gen.
+A fotografia mostra uma xícara artesanal em close, com luz quente, vapor e grãos.
+Não contém textos ou interface. O Hero fornece um texto alternativo descritivo.
+
+Os arquivos têm aproximadamente 16, 43 e 80 kB. Usam `srcSet`, `sizes`, dimensões
+reservadas e prioridade alta de carregamento. O original e os parâmetros de
+geração estão descritos em [docs/hero.md](../../docs/hero.md), incluindo o prompt final.

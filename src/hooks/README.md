@@ -12,5 +12,10 @@ do acionador. O cleanup restaura a rolagem e remove o listener de breakpoint.
 `--header-offset`, preservando a visibilidade das âncoras com zoom e quebra de linhas.
 O observer e a variável inline são removidos no cleanup.
 
+`useHeroMotion` observa movimento reduzido e pausa manual. Uma variável CSS
+recebe a progressão real de scroll por listener passivo e requestAnimationFrame
+sob demanda. IntersectionObserver e visibilitychange interrompem trabalho fora
+da viewport ou em aba oculta. O cleanup cancela frames e remove os listeners.
+
 Animações futuras em JavaScript devem observar `prefers-reduced-motion`, remover
 event listeners e desconectar observers no cleanup de seus efeitos.
