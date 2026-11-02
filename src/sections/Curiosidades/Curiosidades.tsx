@@ -1,15 +1,39 @@
+import { useState } from 'react';
 import { Section } from '../../components/Section/Section';
-import { curiosities } from '../../data/coffeeContent';
+import { Action } from '../../components/Action/Action';
+import { curiosities, discoveryContent } from '../../data/curiosities';
 import { siteContent } from '../../data/siteContent';
+import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
+import { DiscoveryStory } from './DiscoveryStory';
+import styles from './Curiosidades.module.css';
 
 export function Curiosidades() {
+  const [discovered, setDiscovered] = useState<ReadonlySet<string>>(() => new Set());
+  const revealRef = useRevealOnScroll();
+
+  function handleDiscover(id: string) {
+    setDiscovered(previous => previous.has(id) ? previous : new Set([...previous, id]));
+  }
+
   return (
-    <Section content={siteContent.curiosidades} tone="espresso" divider>
-      <ul className="contentList">
-        {curiosities.map(({ id, title, description }) => (
-          <li key={id}><h3>{title}</h3><p>{description}</p></li>
+    <Section content={siteContent.curiosidades} divider>
+      <div className={styles.discoveryBar}>
+        <p>{discoveryContent.instruction}</p>
+        <p className={styles.progress} role="status" aria-label={discoveryContent.statusLabel} aria-atomic="true">
+          <span className={styles.progressDots} aria-hidden="true">
+            {curiosities.map(curiosity => <span key={curiosity.id} data-filled={discovered.has(curiosity.id)} />)}
+          </span>
+          {discovered.size} de {curiosities.length} {discovered.size === 1 ? 'descoberta revelada' : 'descobertas reveladas'}
+        </p>
+      </div>
+      <div ref={revealRef} className={styles.stories}>
+        {curiosities.map(curiosity => (
+          <DiscoveryStory key={curiosity.id} curiosity={curiosity} discovered={discovered.has(curiosity.id)} onDiscover={handleDiscover} />
         ))}
-      </ul>
+      </div>
+      <div className={styles.nextStep}>
+        <Action href={`#${siteContent.jornada.id}`} variant="text">{discoveryContent.nextLabel}</Action>
+      </div>
     </Section>
   );
 }

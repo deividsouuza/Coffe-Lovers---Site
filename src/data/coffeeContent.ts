@@ -1,12 +1,7 @@
 import type { AromaNote, ContentItem } from '../types/coffee';
 
-// Conteúdo introdutório desta etapa. Curiosidades científicas e históricas
-// deverão receber fontes verificadas quando suas revelações forem implementadas.
-export const curiosities = [
-  { id: 'origens', title: 'Onde começa essa história?', description: 'Um convite para conhecer as origens e os caminhos do café.' },
-  { id: 'sentidos', title: 'O que você percebe na xícara?', description: 'Uma pausa para prestar atenção ao aroma, ao sabor e às suas lembranças.' },
-  { id: 'rituais', title: 'Qual é o seu ritual?', description: 'Um olhar para os pequenos gestos que tornam cada pausa pessoal.' },
-] as const satisfies readonly ContentItem[];
+// Mantém o ponto de importação anterior para consumidores do conteúdo.
+export { curiosities } from './curiosities';
 
 export const journeyStages = [
   { id: 'cultivo', title: 'Cultivo', description: 'O começo da jornada, junto à planta e à terra.' },

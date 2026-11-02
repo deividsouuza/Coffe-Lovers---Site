@@ -37,3 +37,14 @@ Não contém textos ou interface. O Hero fornece um texto alternativo descritivo
 Os arquivos têm aproximadamente 16, 43 e 80 kB. Usam `srcSet`, `sizes`, dimensões
 reservadas e prioridade alta de carregamento. O original e os parâmetros de
 geração estão descritos em [docs/hero.md](../../docs/hero.md), incluindo o prompt final.
+
+## Fotografias de Descubra o café
+
+`images/discovery/` contém quatro fotografias reais em duas resoluções cada:
+frutos, grãos após a torra, folhas de Coffea arabica e extração de espresso.
+Os arquivos são WebP locais, com lazy loading, tamanhos reservados e alt descritivo.
+Os créditos são exibidos nas legendas. A foto das folhas é uma adaptação sob
+CC BY-SA 4.0; as demais são fornecidas sob a licença Unsplash.
+
+Autoria, URLs originais, licenças e alterações:
+[images/discovery/CREDITS.md](images/discovery/CREDITS.md).

@@ -12,8 +12,8 @@ export const siteContent = {
   curiosidades: {
     id: 'curiosidades',
     eyebrow: '01 · Descubra o café',
-    title: 'A curiosidade também faz parte do ritual.',
-    description: 'Entre histórias, aromas e pequenos detalhes, há sempre algo para descobrir na próxima xícara.',
+    title: 'VOCÊ NÃO ESTÁ APENAS OLHANDO. ESTÁ DESCOBRINDO.',
+    description: 'Entre o fruto e a xícara, há histórias que um olhar apressado não percebe. Aproxime-se. A próxima descoberta está nos detalhes.',
   },
   jornada: {
     id: 'jornada',

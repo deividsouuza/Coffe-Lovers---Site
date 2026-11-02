@@ -44,7 +44,8 @@ src/
     coffeeContent.ts      # Curiosidades, jornada, perfis e notas aromáticas
     siteContent.ts        # Textos das seções e navegação
     heroContent.ts        # Conteúdo editorial e acessível do Hero
-  hooks/                  # Menu mobile, altura do header e movimento do Hero
+    curiosities.ts        # Descobertas, explicações, fotos e fontes verificadas
+  hooks/                  # Menu, header, movimento do Hero e revelações por scroll
   sections/
     Hero/
     Curiosidades/
@@ -70,14 +71,15 @@ package-lock.json
 ## Limites desta etapa
 
 Esta é a fundação técnica com o design system editorial, header responsivo e
-Hero cinematográfico. As outras cinco seções conservam seus conteúdos introdutórios;
-quiz, revelações e animações da jornada ficam para próximos prompts.
+Hero cinematográfico e Descubra o café com revelações interativas. As outras quatro
+seções conservam seus conteúdos introdutórios; quiz e animações da jornada ficam
+para próximos prompts.
 Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
 aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
 Os perfis são descrições editoriais. As notas aromáticas são vocabulário sensorial,
-não ingredientes adicionados. Curiosidades científicas ou históricas deverão
-receber fontes verificadas ao serem desenvolvidas.
+não ingredientes adicionados. As curiosidades implementadas têm fontes botânicas
+e científicas acessíveis na interface e na documentação.
 
 CSS Modules isolam os estilos dos componentes. Cormorant Garamond e DM Sans
 usam arquivos variáveis locais, sem requisições a serviços de fontes em runtime.
@@ -94,6 +96,16 @@ de movimento reduzido. O visitante também pode pausar os movimentos pelo botão
 da seção. A seta navega para Curiosidades, mantendo foco e destino visíveis.
 
 Implementação, prompt do asset e verificações: [docs/hero.md](docs/hero.md).
+
+## Descubra o café
+
+Quatro curiosidades em uma composição editorial, com fotografias de frutos,
+torra, planta e extração. Cada detalhe abre e fecha por toque ou teclado e inclui
+explicação complementar e fontes. O contador só avança ao abrir uma descoberta
+pela primeira vez. Créditos das fotos estão visíveis nas legendas.
+
+Conteúdo, referências, estrutura e verificações:
+[docs/curiosidades.md](docs/curiosidades.md).
 
 ## Design system
 
@@ -118,6 +130,16 @@ padrões de largura, rótulo editorial e texto introdutório.
 - No mobile, abra o menu e confira Tab/Shift+Tab, Escape, Fechar e navegação.
 - Abra o menu e amplie a janela até 1024 px: o diálogo fecha e o foco vai para a marca.
 - No Hero, confira Pausar movimentos, Retomar movimentos e a navegação pela seta.
+- Em Descubra o café, abra e feche os quatro detalhes com toque, Enter e Espaço.
+  Ao reabrir, o contador deve manter a descoberta já registrada.
+
+## Verificações da etapa de Curiosidades
+
+TypeScript e build passaram. Sete larguras entre 360 e 1920 px foram verificadas
+em Chrome headless, incluindo os quatro painéis abertos, sem overflow horizontal.
+As interações passaram por teclado e toque simulado, com contador, foco, fontes,
+fotos e âncora para Jornada conferidos. Movimento reduzido e texto ampliado a 200%
+também passaram. A análise automática axe não encontrou violações nas amostras.
 
 ## Verificações da etapa do Hero
 
