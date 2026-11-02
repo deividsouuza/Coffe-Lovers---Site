@@ -6,7 +6,7 @@ em [hero.md](hero.md). Descubra o café possui composição editorial e detalhes
 interativos, documentados em [curiosidades.md](curiosidades.md). A jornada guiada
 pela rolagem está em [jornada.md](jornada.md). A seleção de atmosferas sensoriais
 está em [perfis.md](perfis.md). O mapa sensorial está em [aromas.md](aromas.md).
-Encerramento aguarda seu próximo prompt.
+O encerramento em creme e o rodapé estão em [encerramento.md](encerramento.md).
 A imagem de referência não estava disponível nesta
 conversa; a direção segue o briefing textual e a paleta fornecida.
 

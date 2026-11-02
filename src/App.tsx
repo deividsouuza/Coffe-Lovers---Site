@@ -1,4 +1,5 @@
 import { SiteHeader } from './components/SiteHeader/SiteHeader';
+import { SiteFooter } from './components/SiteFooter/SiteFooter';
 import { PhotoDivider } from './components/PhotoDivider/PhotoDivider';
 import { Hero } from './sections/Hero/Hero';
 import { Curiosidades } from './sections/Curiosidades/Curiosidades';
@@ -21,6 +22,7 @@ export function App() {
         <Aromas />
         <Encerramento />
       </main>
+      <SiteFooter />
     </>
   );
 }

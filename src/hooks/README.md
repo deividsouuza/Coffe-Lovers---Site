@@ -41,5 +41,11 @@ referências dos acionadores para devolver o foco ao fechar o painel e trata Esc
 apenas dentro da seção. A seleção fica em memória, sem persistência nem listeners
 globais. As animações de conexão e painel são CSS e respeitam movimento reduzido.
 
+`useFarewellMotion` observa a moldura da fotografia final e executa um único
+movimento de 4,5 segundos na foto e no vapor com Web Animations API. Cancela os
+movimentos ao sair da tela, ocultar a aba ou ativar movimento reduzido. Nada fica
+oculto antes do observer. O cleanup cancela animações, desconecta o observer e
+remove os listeners. Não há loop nem atualização React por frame.
+
 Animações futuras em JavaScript devem observar `prefers-reduced-motion`, remover
 event listeners e desconectar observers no cleanup de seus efeitos.

@@ -1,0 +1,7 @@
+.footer { padding-bottom: var(--space-xl); background: var(--color-cream); color: var(--color-espresso); }
+.signature { margin: 0; padding-top: var(--space-lg); border-top: 1px solid var(--border); color: var(--ink-muted); font-size: var(--text-sm); line-height: 2; }
+.brand { color: var(--ink); font-family: var(--font-editorial); font-size: 1.625rem; letter-spacing: .025em; }
+
+@media (min-width: 64rem) {
+  .footer { padding-bottom: var(--space-2xl); }
+}

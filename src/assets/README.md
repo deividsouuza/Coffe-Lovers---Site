@@ -77,3 +77,15 @@ painel ampliado, sem bitmap ou requisição adicional. O grão central reaprovei
 `CoffeeBean`, e as conexões são curvas SVG próprias. Os desenhos são decorativos;
 nomes, estados e descrições acessíveis estão nos controles HTML e no painel.
 O mapa não reproduz a roda gráfica de sabores da SCA/WCR.
+
+## Fotografia e textura do encerramento
+
+`images/farewell/pausa-480.webp` e `pausa-960.webp` são versões locais de uma
+fotografia própria criada com a ferramenta integrada `image_gen`: xícara artesanal,
+linho e luz suave. Têm aproximadamente 21 e 69 kB, alt descritivo, lazy loading,
+dimensões reservadas e seleção responsiva. O vapor adicional é um SVG decorativo
+em código, com movimento breve e opcional. `textures/paper-grain.svg` é uma textura
+procedural própria e estática, aplicada com opacidade de 4,5% no fundo creme.
+
+Origem, dimensões, pesos e prompt final:
+[images/farewell/README.md](images/farewell/README.md).

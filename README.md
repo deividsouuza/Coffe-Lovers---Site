@@ -37,6 +37,7 @@ src/
   components/
     Section/              # Contêiner semântico compartilhado + CSS Module
     SiteHeader/           # Marca e navegação por âncoras + CSS Module
+    SiteFooter/           # Assinatura e identidade no rodapé
     Action/               # Botão ou âncora, com três variantes visuais
     Icon/                 # Ícones SVG decorativos compartilhados
     OrganicDivider/       # Divisória artesanal reutilizável
@@ -50,6 +51,7 @@ src/
     journeyContent.ts     # Seis etapas, fotografias e textos da jornada
     profileContent.ts     # Perfis sensoriais, imagens e mensagens de seleção
     aromaContent.ts       # Seis aromas, descrições, fontes e geometria do mapa
+    farewellContent.ts    # Agradecimento, assinatura e imagem de encerramento
   hooks/                  # Menu, header, movimentos e seleção com memória opcional
   sections/
     Hero/
@@ -79,7 +81,8 @@ Esta é a fundação técnica com o design system editorial, header responsivo e
 Hero cinematográfico, Descubra o café com revelações interativas e Jornada guiada
 pela rolagem. Perfis oferece seleção sensorial e afetiva com memória opcional.
 Aromas oferece um mapa orgânico com seis referências sensoriais exploráveis.
-Encerramento conserva seu conteúdo introdutório para o próximo prompt.
+Encerramento completa a narrativa com uma pausa em creme, fotografia própria,
+agradecimento, assinatura no rodapé e retorno ao Hero.
 Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
 aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
@@ -142,6 +145,18 @@ e um convite afetivo. A explicação científica e as fontes permanecem visívei
 
 Conteúdo, componentes e verificações: [docs/aromas.md](docs/aromas.md).
 
+## Uma pausa para sentir
+
+Uma curva orgânica conduz do mapa espresso ao fundo creme com textura sutil.
+O encerramento apresenta o agradecimento, uma fotografia editorial própria e
+vapor delicado. Foto e vapor fazem um único movimento de 4,5 segundos ao entrar
+na tela, sem loop; movimento reduzido preserva a composição estática. O link
+Reviver a jornada retorna ao Hero com foco e âncora nativos. O rodapé conclui
+com a assinatura COFFE LOVERS.
+
+Implementação, assets, prompt e verificações:
+[docs/encerramento.md](docs/encerramento.md).
+
 ## Design system
 
 Os contratos e exemplos de uso estão em [docs/design-system.md](docs/design-system.md).
@@ -175,6 +190,19 @@ padrões de largura, rótulo editorial e texto introdutório.
 - Em Aromas, explore as seis referências. Confira a ilustração contextual, o
   destaque e o texto do painel. Feche pelo mesmo aroma, botão Fechar ou Escape.
   Ao fechar pelo painel, o foco deve voltar ao aroma selecionado, visível na tela.
+- Em Sua pausa, confira o agradecimento, a fotografia, o rodapé e a transição
+  do mapa de aromas. Use Reviver a jornada por clique, toque e Enter: o Hero
+  deve ficar visível abaixo do cabeçalho, com foco e endereço `#inicio`.
+
+## Verificações da etapa de Encerramento
+
+TypeScript e build passaram. Oito larguras de 320 a 1920 px verificadas em
+Chrome headless, sem overflow ou sobreposição do título com a fotografia.
+Textos obrigatórios, assinatura, imagem responsiva, navegação pelo menu e retorno
+ao Hero por clique, toque simulado e teclado passaram. Texto ampliado a 200%,
+movimento reduzido, término do movimento em 4,5 segundos, ausência de loop e
+cancelamento ao mudar a preferência passaram. Análise axe do encerramento e
+rodapé sem violações nas amostras de 360, 390 e 1440 px.
 
 ## Verificações da etapa de Aromas
 

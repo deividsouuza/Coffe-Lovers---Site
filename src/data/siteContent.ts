@@ -1,5 +1,6 @@
 import type { SectionContent } from '../types/coffee';
 import { heroContent } from './heroContent';
+import { farewellContent } from './farewellContent';
 
 export const siteContent = {
   name: 'COFFE LOVERS',
@@ -36,8 +37,8 @@ export const siteContent = {
   encerramento: {
     id: 'pausa',
     eyebrow: '05 · Uma pausa para sentir',
-    title: 'O melhor desta história é ter você aqui.',
-    description: 'Obrigado por compartilhar este instante com a gente. Sinta o aroma, aproveite a companhia e viva a sua pausa, no seu tempo.',
+    title: farewellContent.title,
+    description: farewellContent.message,
   },
 } as const satisfies { name: string } & Record<
   'hero' | 'curiosidades' | 'jornada' | 'perfis' | 'aromas' | 'encerramento',
