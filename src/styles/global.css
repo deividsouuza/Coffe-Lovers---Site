@@ -1,0 +1,108 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-espresso);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.25rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(1.875rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; }
+
+a {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img { height: auto; }
+
+:focus-visible {
+  outline: 3px solid var(--color-roasted);
+  outline-offset: 4px;
+}
+
+.skipLink {
+  position: absolute;
+  z-index: 10;
+  inset: var(--space-sm) auto auto var(--space-sm);
+  transform: translateY(calc(-100% - var(--space-lg)));
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-espresso);
+  color: var(--color-cream);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.contentList {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+  padding-left: var(--space-md);
+  max-width: 48rem;
+}
+
+.descriptionList {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+  max-width: 48rem;
+}
+
+.descriptionList dt { font-weight: 600; }
+.descriptionList dd { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,19 @@
+:root {
+  color-scheme: light;
+  --color-espresso: #2b130d;
+  --color-roasted: #5a2e1f;
+  --color-caramel: #c69a73;
+  --color-cream: #f6eee5;
+  --color-beige: #e6d3bf;
+  --color-olive: #7d8168;
+  /* Fontes locais de fallback até a etapa de direção visual e tipografia. */
+  --font-editorial: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-section: clamp(3rem, 7vw, 6rem);
+  --page-gutter: clamp(1.25rem, 5vw, 4rem);
+  --content-width: 70rem;
+}
