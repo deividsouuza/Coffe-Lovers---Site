@@ -17,11 +17,12 @@ recebe a progressão real de scroll por listener passivo e requestAnimationFrame
 sob demanda. IntersectionObserver e visibilitychange interrompem trabalho fora
 da viewport ou em aba oculta. O cleanup cancela frames e remove os listeners.
 
-`useRevealOnScroll` aplica uma única revelação de entrada aos artigos marcados com
-`data-discovery-reveal`. O conteúdo permanece visível sem a animação. O hook usa
-IntersectionObserver e Web Animations API, evita animar um artigo com foco e
-cancela os movimentos ativos se a preferência de movimento reduzido for ativada.
-Observer, listener e animações são limpos no unmount.
+`useRevealOnScroll` é integrado uma vez ao `main` por `App`. Um IntersectionObserver
+coordena os capítulos e artigos marcados com `data-motion-reveal`. O conteúdo
+permanece visível sem animação e recebe uma única entrada com stagger limitado.
+Foco, saída da tela, aba oculta e movimento reduzido cancelam movimentos ativos.
+Observer, listeners e animações são limpos no unmount. Durações, amplitudes e curva
+são lidas de CSS por `src/animations/motionSettings.ts`.
 
 `useJourneyScroll` carrega o motor GSAP/ScrollTrigger quando a jornada se aproxima
 ou recebe foco. Atualiza React apenas na mudança da etapa ativa; a progressão
@@ -29,6 +30,8 @@ contínua é aplicada pelo motor ao DOM. Seu cleanup cancela o observer inicial,
 remove o listener de foco e reverte o motor. Um import concluído depois do unmount
 não cria instâncias. A medição e os detalhes de ciclo de vida estão em
 `src/animations/createJourneyAnimation.ts` e `docs/jornada.md`.
+O ResizeObserver mede apenas a própria jornada, o header e os irmãos anteriores;
+alterar conteúdo depois do percurso não agenda um refresh desnecessário.
 
 `useCoffeeProfile` mantém a escolha sensorial e a preferência de lembrar no
 dispositivo. A inicialização aceita somente três IDs conhecidos, e as operações
@@ -46,6 +49,7 @@ movimento de 4,5 segundos na foto e no vapor com Web Animations API. Cancela os
 movimentos ao sair da tela, ocultar a aba ou ativar movimento reduzido. Nada fica
 oculto antes do observer. O cleanup cancela animações, desconecta o observer e
 remove os listeners. Não há loop nem atualização React por frame.
+O tempo e a curva são lidos dos mesmos tokens do restante da experiência.
 
 Animações futuras em JavaScript devem observar `prefers-reduced-motion`, remover
 event listeners e desconectar observers no cleanup de seus efeitos.

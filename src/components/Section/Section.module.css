@@ -1,4 +1,6 @@
 .section {
+  position: relative;
+  isolation: isolate;
   padding-block: var(--space-section);
   background: var(--surface);
   color: var(--ink);

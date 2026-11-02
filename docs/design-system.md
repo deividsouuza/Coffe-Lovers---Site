@@ -92,3 +92,21 @@ Foco usa contorno de 2 px adaptado ao tema. A seleção usa bege e espresso.
 `prefers-reduced-motion` desativa a rolagem suave, transições e deslocamentos.
 O Hero usa uma composição própria, com movimentos leves e controle de pausa.
 Os detalhes de implementação e validação estão em [hero.md](hero.md).
+
+## Movimento e continuidade
+
+A escala de motion está nos tokens CSS: revelação 560 ms, mudança de cena 420 ms,
+atmosfera 4500 ms, stagger 80 ms e distâncias de 8 px no mobile/12 px no desktop.
+Detalhes usam 4 px e feedback de 260 ms. `readMotionSettings` compartilha esses
+valores com Web Animations API e GSAP. Transforms controlados pelo scroll têm
+interpolação linear; não recebem transitions CSS.
+
+`SectionTransition` reaproveita a curva do encerramento para conectar superfícies
+claras e escuras, sem interpolar as cores do texto e do fundo. Os painéis de perfis
+e aromas reservam a altura necessária aos seus estados com CSS Grid; conteúdo
+inativo fica invisível, inerte e fora da árvore acessível.
+
+Com movimento reduzido, CSS animations/transitions são removidas inclusive quando
+já estão em andamento. JS cancela suas animações e GSAP usa a versão estática do
+percurso, preservando o progresso e a navegação. Contrato completo e verificações:
+[motion-design.md](motion-design.md).

@@ -1,5 +1,8 @@
 # Encerramento · COFFE LOVERS
 
+O encerramento agora compartilha tokens e transição de superfície com a
+[integração de motion design](motion-design.md). O registro da etapa original segue abaixo.
+
 A seção `#pausa` conclui a narrativa com o título, mensagem e assinatura pedidos.
 Uma curva de espresso entra sobre o creme e cria continuidade com Aromas, sem
 alterar o conteúdo ou os controles do mapa. A textura de papel é muito sutil;

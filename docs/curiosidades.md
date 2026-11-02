@@ -1,5 +1,8 @@
 # Descubra o café
 
+A revelação agora é coordenada no `main`; veja o contrato atual na
+[integração de motion design](motion-design.md). O registro da etapa original segue abaixo.
+
 Seção editorial com quatro descobertas independentes. O título solicitado é
 mantido integralmente. As composições alternam retrato dos frutos, texto com foto
 horizontal de torra, recorte circular da planta e faixa espresso com a extração.

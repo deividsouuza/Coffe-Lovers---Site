@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { journeyStages } from '../data/journeyContent';
+import { readMotionSettings } from './motionSettings';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,7 @@ export function createJourneyAnimation(root: HTMLElement, onActive: (index: numb
   media.add({ desktop: '(min-width: 64rem)', reduced: '(prefers-reduced-motion: reduce)', all: 'all' }, context => {
     const desktop = Boolean(context.conditions?.desktop);
     const reduced = Boolean(context.conditions?.reduced);
+    const motion = readMotionSettings();
     root.dataset.motion = reduced ? 'reduced' : 'full';
     let offsets: number[] = [];
     let trackTop = 0;
@@ -103,11 +105,11 @@ export function createJourneyAnimation(root: HTMLElement, onActive: (index: numb
         const copy = step.querySelector('[data-journey-copy]');
         const wash = step.querySelector('[data-journey-wash]');
         const trigger = { trigger: step, start: 'top 90%', end: 'center 42%', scrub: true, invalidateOnRefresh: true };
-        gsap.fromTo(copy, { y: desktop ? 16 : 6, opacity: 0.9 }, { y: 0, opacity: 1, ease: 'none', scrollTrigger: { ...trigger, id: `journey-copy-${index}` } });
+        gsap.fromTo(copy, { y: motion.distance, opacity: 0.95 }, { y: 0, opacity: 1, ease: 'none', scrollTrigger: { ...trigger, id: `journey-copy-${index}` } });
         gsap.fromTo(wash, { opacity: 0.25 }, { opacity: 0.8, ease: 'none', scrollTrigger: { ...trigger, id: `journey-wash-${index}` } });
         if (desktop) {
-          gsap.fromTo(image, { y: 16, scale: 1.025, opacity: 0.82 }, {
-            y: -12, scale: 1, opacity: 1, ease: 'none',
+          gsap.fromTo(image, { y: motion.distance, scale: 1.025, opacity: 0.9 }, {
+            y: -motion.distance, scale: 1, opacity: 1, ease: 'none',
             scrollTrigger: { trigger: step, start: 'top bottom', end: 'bottom top', scrub: true, id: `journey-image-${index}`, invalidateOnRefresh: true },
           });
         }
@@ -138,9 +140,13 @@ export function createJourneyAnimation(root: HTMLElement, onActive: (index: numb
       if (!disposed) ScrollTrigger.refresh(true);
     });
   };
-  // Mudanças nas seções anteriores também alteram a posição da jornada.
+  // Só o percurso, o header e as seções anteriores alteram estas medidas.
   const resizeObserver = new ResizeObserver(scheduleRefresh);
-  resizeObserver.observe(root.closest('main') ?? root);
+  resizeObserver.observe(root);
+  for (const sibling of root.parentElement?.children ?? []) {
+    if (sibling === root) break;
+    resizeObserver.observe(sibling);
+  }
   const header = document.querySelector('body > #root > header');
   if (header) resizeObserver.observe(header);
   void document.fonts.ready.then(scheduleRefresh);

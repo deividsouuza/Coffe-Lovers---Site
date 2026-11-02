@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { readMotionSettings } from '../animations/motionSettings';
 
 /** Um único movimento breve; o conteúdo permanece visível sem animação. */
 export function useFarewellMotion() {
@@ -18,7 +19,7 @@ export function useFarewellMotion() {
     };
     const animate = (element: Element | null, keyframes: Keyframe[], duration: number) => {
       if (!element) return;
-      const animation = element.animate(keyframes, { duration, easing: 'cubic-bezier(0.2, 0.7, 0.3, 1)' });
+      const animation = element.animate(keyframes, { duration, easing: readMotionSettings().easing });
       animations.add(animation);
       animation.onfinish = () => animations.delete(animation);
     };
@@ -29,12 +30,12 @@ export function useFarewellMotion() {
         played = true;
         animate(frame.querySelector('[data-farewell-photo]'), [
           { transform: 'scale(1.025)' }, { transform: 'scale(1)' },
-        ], 4500);
+        ], readMotionSettings().atmosphere);
         animate(frame.querySelector('[data-farewell-steam]'), [
           { opacity: .025, transform: 'translateY(6px) scaleX(.97)' },
           { opacity: .15, transform: 'translateY(-2px) scaleX(1.03)', offset: .45 },
           { opacity: .07, transform: 'translateY(-8px) scaleX(1)' },
-        ], 4500);
+        ], readMotionSettings().atmosphere);
       }
     }, { threshold: .15 });
 

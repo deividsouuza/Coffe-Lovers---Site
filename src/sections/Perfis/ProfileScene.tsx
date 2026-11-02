@@ -19,7 +19,15 @@ export function ProfileScene({ selectedId }: { selectedId: CoffeeProfileId | nul
       </div>
       <span className={styles.motif} key={visible.id}><ProfileMotif profile={visible.id} /></span>
       <figcaption className={styles.caption}>
-        {selectedId ? visible.image.caption : profileContent.initialCaption}
+        <span className={styles.captionStack}>
+          <span className={styles.captionText} data-visible={!selectedId} aria-hidden={Boolean(selectedId)} inert={Boolean(selectedId)}>
+            {profileContent.initialCaption}
+          </span>
+          {coffeeProfiles.map(profile => (
+            <span className={styles.captionText} key={profile.id} data-visible={selectedId === profile.id}
+              aria-hidden={selectedId !== profile.id} inert={selectedId !== profile.id}>{profile.image.caption}</span>
+          ))}
+        </span>
         <span>Imagens próprias · COFFE LOVERS</span>
       </figcaption>
     </figure>

@@ -25,7 +25,7 @@ export function DiscoveryStory({ curiosity, discovered, onDiscover }: DiscoveryS
   const textFirst = curiosity.layout === 'roast' || curiosity.layout === 'espresso';
 
   return (
-    <article className={styles.story} data-layout={curiosity.layout} data-discovery-reveal
+    <article className={styles.story} data-layout={curiosity.layout} data-motion-reveal
       data-tone={curiosity.layout === 'espresso' ? 'espresso' : undefined}
       aria-labelledby={`curiosidade-${curiosity.id}`}>
       {textFirst ? <>{narrative}{image}</> : <>{image}{narrative}</>}

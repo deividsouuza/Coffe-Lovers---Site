@@ -1,5 +1,8 @@
 # Mapa de aromas · COFFE LOVERS
 
+Painel estável e tempos de conexão foram revisados na
+[integração de motion design](motion-design.md). O registro da etapa original segue abaixo.
+
 Seção com o título “O CAFÉ ESCONDE MUITO MAIS DO QUE VOCÊ IMAGINA.”,
 composição livre em espresso e um painel editorial em creme. O grão central
 reaproveita `CoffeeBean`; seis ilustrações próprias representam chocolate,

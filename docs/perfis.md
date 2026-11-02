@@ -1,5 +1,8 @@
 # Qual tipo de Coffe Lover é você?
 
+Os estados agora reservam espaço e usam o ritmo comum da
+[integração de motion design](motion-design.md). O registro da etapa original segue abaixo.
+
 Uma escolha sensorial e afetiva, sem questionário, pontuação ou recomendação de
 produtos. O visitante seleciona a atmosfera com que se identifica naquele momento.
 Nenhum perfil vem marcado na primeira visita; a imagem inicial é apenas um convite.

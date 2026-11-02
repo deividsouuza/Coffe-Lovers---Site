@@ -15,7 +15,7 @@ export function Aromas() {
     <section id={siteContent.aromas.id} className={styles.section} data-tone="espresso" aria-labelledby="aromas-titulo"
       tabIndex={-1} onKeyDown={handleKeyDown}>
       <div className="container">
-        <header className={styles.intro}>
+        <header className={styles.intro} data-motion-reveal>
           <OrganicDivider />
           <p className="eyebrow">{siteContent.aromas.eyebrow}</p>
           <h2 id="aromas-titulo">{siteContent.aromas.title}</h2>

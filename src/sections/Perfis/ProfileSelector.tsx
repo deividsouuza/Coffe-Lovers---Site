@@ -28,7 +28,10 @@ export function ProfileSelector({ selectedId, onSelect }: ProfileSelectorProps) 
               <span className={styles.optionCopy}>
                 <span className={styles.optionTitle}>{profile.title}</span>
                 <span className={styles.optionHint} id={`${groupId}-${profile.id}-hint`}>{profile.hint}</span>
-                <span className={styles.optionState} aria-hidden="true">{selectedId === profile.id ? 'Selecionado' : 'Escolher'}</span>
+                <span className={styles.optionState} aria-hidden="true">
+                  <span data-state="idle">Escolher</span>
+                  <span data-state="selected">Selecionado</span>
+                </span>
               </span>
             </span>
           </label>

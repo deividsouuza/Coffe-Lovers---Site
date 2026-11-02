@@ -17,7 +17,7 @@ export function Perfis() {
     <section id={siteContent.perfis.id} className={styles.profiles} data-profile={selectedId ?? 'initial'}
       aria-labelledby="perfis-titulo" tabIndex={-1}>
       <div className="container">
-        <header className={styles.intro}>
+        <header className={styles.intro} data-motion-reveal>
           <OrganicDivider />
           <p className="eyebrow">{siteContent.perfis.eyebrow}</p>
           <h2 id="perfis-titulo">{siteContent.perfis.title}</h2>

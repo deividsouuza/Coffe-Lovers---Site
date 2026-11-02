@@ -61,6 +61,12 @@
   --duration-fast: 160ms;
   --duration-base: 260ms;
   --duration-slow: 420ms;
+  --motion-duration-reveal: 560ms;
+  --motion-duration-scene: 420ms;
+  --motion-duration-atmosphere: 4500ms;
+  --motion-stagger: 80ms;
+  --motion-distance: 8px;
+  --motion-detail-distance: 4px;
   --ease-out: cubic-bezier(0.2, 0.7, 0.3, 1);
   --transition-color: color var(--duration-fast) ease, background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
   --layer-header: 20;
@@ -81,7 +87,7 @@
 }
 
 @media (min-width: 64rem) {
-  :root { --header-height: 6rem; }
+  :root { --header-height: 6rem; --motion-distance: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -89,5 +95,11 @@
     --duration-fast: 0ms;
     --duration-base: 0ms;
     --duration-slow: 0ms;
+    --motion-duration-reveal: 0ms;
+    --motion-duration-scene: 0ms;
+    --motion-duration-atmosphere: 0ms;
+    --motion-stagger: 0ms;
+    --motion-distance: 0px;
+    --motion-detail-distance: 0px;
   }
 }

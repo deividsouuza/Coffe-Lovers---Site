@@ -168,7 +168,7 @@
 
 @media (min-width: 64rem) {
   .hero {
-    --photo-travel: 24px;
+    --photo-travel: 18px;
     display: flex;
     align-items: center;
     min-height: calc(100svh - var(--header-offset));
@@ -199,17 +199,17 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .eyebrow,
-  .title,
-  .subtitle,
-  .visual,
-  .footer { animation: reveal 850ms var(--ease-out) both; }
-
-  .title { animation-delay: 80ms; }
-  .subtitle { animation-delay: 160ms; }
-  .visual { animation-delay: 120ms; }
-  .footer { animation-delay: 240ms; }
-  .steam { animation: steam 9s ease-in-out infinite; }
+  .eyebrow { animation: reveal var(--duration-base) var(--ease-out) both; }
+  .title { animation: reveal var(--motion-duration-reveal) var(--ease-out) var(--motion-stagger) both; }
+  .subtitle { animation: reveal var(--motion-duration-scene) var(--ease-out) calc(var(--motion-stagger) * 2) both; }
+  .visual { animation: reveal var(--motion-duration-reveal) var(--ease-out) calc(var(--motion-stagger) * 3) both; }
+  .footer { animation: reveal var(--duration-base) var(--ease-out) calc(var(--motion-stagger) * 4) both; }
+  .hero:focus-within .eyebrow,
+  .hero:focus-within .title,
+  .hero:focus-within .subtitle,
+  .hero:focus-within .visual,
+  .hero:focus-within .footer { animation: none; }
+  .steam { animation: steam calc(var(--motion-duration-atmosphere) * 2) ease-in-out infinite; }
   .scrollCircle svg { animation: invite 3s ease-in-out infinite; }
   .hero[data-motion='paused'] .steam,
   .hero[data-motion='paused'] .scrollCircle svg,
@@ -224,7 +224,7 @@
 }
 
 @keyframes reveal {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: .4; transform: translateY(var(--motion-distance)); }
   to { opacity: 1; transform: translateY(0); }
 }
 

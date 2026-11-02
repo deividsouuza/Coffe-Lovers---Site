@@ -32,7 +32,7 @@ Para instalações reproduzíveis após o clone, use `npm ci`.
 
 ```text
 src/
-  animations/             # Motor de rolagem da jornada, carregado sob demanda
+  animations/             # Jornada sob demanda + leitura dos tokens de movimento
   assets/                 # Fontes WOFF2 locais, licenças e fotografias WebP
   components/
     Section/              # Contêiner semântico compartilhado + CSS Module
@@ -41,6 +41,7 @@ src/
     Action/               # Botão ou âncora, com três variantes visuais
     Icon/                 # Ícones SVG decorativos compartilhados
     OrganicDivider/       # Divisória artesanal reutilizável
+    SectionTransition/    # Passagem orgânica entre espresso e creme
     PhotoDivider/         # Intervalo fotográfico responsivo
     CoffeeBean/           # Grão editorial compartilhado por Hero e Jornada
   data/
@@ -170,6 +171,21 @@ padrões de largura, rótulo editorial e texto introdutório.
 `Action` usa `href` para navegação e `onClick` para uma ação, com variantes
 `primary`, `secondary` e `text`. Nunca exiba um controle sem destino ou ação.
 
+## Motion design integrado
+
+Entradas, respostas e atmosferas usam uma escala comum de durações, distâncias
+e easing. O Hero apresenta texto, foto e instrução em sequência; um único observer
+coordena capítulos e curiosidades na primeira passagem. O grão continua ligado
+à rolagem real nos dois sentidos. Perfis e aromas mantêm altura estável ao trocar
+conteúdo, e a resposta visual começa sem aguardar uma animação anterior.
+
+As bordas orgânicas conectam Hero, Descubra, Jornada e encerramento. Temas de
+perfis mudam com contraste preservado; fotos e detalhes fazem a transição suave.
+O vapor final permanece breve. Movimento reduzido interrompe também transições
+CSS em andamento. Nenhuma biblioteca de smooth scrolling foi adicionada.
+
+Contratos, arquivos e verificações: [docs/motion-design.md](docs/motion-design.md).
+
 ## Conferência manual
 
 - Confira as seis seções e as âncoras do cabeçalho em uma única rolagem.
@@ -193,6 +209,16 @@ padrões de largura, rótulo editorial e texto introdutório.
 - Em Sua pausa, confira o agradecimento, a fotografia, o rodapé e a transição
   do mapa de aromas. Use Reviver a jornada por clique, toque e Enter: o Hero
   deve ficar visível abaixo do cabeçalho, com foco e endereço `#inicio`.
+
+## Verificações da integração de motion
+
+Build e TypeScript passaram. Percurso completo, ida e volta, 11 posições do grão,
+trocas rápidas de perfis e aromas e altura dos painéis conferidos em sete larguras
+de 360 a 1920 px. Teclado, toque simulado, roda do mouse, retorno ao Hero, memória
+opcional e texto a 200% passaram. Movimento reduzido inicial e ativado durante
+o uso passou; axe sem violações nas amostras de 360, 390 e 1440 px.
+Três ciclos de montagem/desmontagem em StrictMode, incluindo breakpoints e troca
+de preferência, terminaram sem ScrollTriggers, alvos observados ou animações.
 
 ## Verificações da etapa de Encerramento
 

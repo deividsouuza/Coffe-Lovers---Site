@@ -1,5 +1,8 @@
 # Hero · COFFE LOVERS
 
+Os tempos e a coordenação atuais foram revisados na
+[integração de motion design](motion-design.md). O registro abaixo descreve a etapa original.
+
 ## Resultado
 
 O Hero usa fundo espresso, texto HTML e uma fotografia própria de uma xícara

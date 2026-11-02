@@ -5,6 +5,7 @@ import { siteContent } from '../../data/siteContent';
 import { useJourneyScroll } from '../../hooks/useJourneyScroll';
 import { JourneyStep } from './JourneyStep';
 import { JourneyRail } from './JourneyRail';
+import { SectionTransition } from '../../components/SectionTransition/SectionTransition';
 import styles from './Jornada.module.css';
 
 export function Jornada() {
@@ -13,7 +14,8 @@ export function Jornada() {
   return (
     <section ref={journeyRef} id={siteContent.jornada.id} className={styles.journey}
       data-tone="espresso" aria-labelledby="jornada-titulo" tabIndex={-1}>
-      <header className={`container ${styles.intro}`}>
+      <SectionTransition from="cream" />
+      <header className={`container ${styles.intro}`} data-motion-reveal>
         <OrganicDivider />
         <p className="eyebrow">{siteContent.jornada.eyebrow}</p>
         <h2 id="jornada-titulo">{siteContent.jornada.title}</h2>

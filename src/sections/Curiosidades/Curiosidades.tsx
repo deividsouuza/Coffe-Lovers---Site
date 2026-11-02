@@ -3,20 +3,18 @@ import { Section } from '../../components/Section/Section';
 import { Action } from '../../components/Action/Action';
 import { curiosities, discoveryContent } from '../../data/curiosities';
 import { siteContent } from '../../data/siteContent';
-import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
 import { DiscoveryStory } from './DiscoveryStory';
 import styles from './Curiosidades.module.css';
 
 export function Curiosidades() {
   const [discovered, setDiscovered] = useState<ReadonlySet<string>>(() => new Set());
-  const revealRef = useRevealOnScroll();
 
   function handleDiscover(id: string) {
     setDiscovered(previous => previous.has(id) ? previous : new Set([...previous, id]));
   }
 
   return (
-    <Section content={siteContent.curiosidades} divider>
+    <Section content={siteContent.curiosidades} divider transitionFrom="espresso">
       <div className={styles.discoveryBar}>
         <p>{discoveryContent.instruction}</p>
         <p className={styles.progress} role="status" aria-label={discoveryContent.statusLabel} aria-atomic="true">
@@ -26,7 +24,7 @@ export function Curiosidades() {
           {discovered.size} de {curiosities.length} {discovered.size === 1 ? 'descoberta revelada' : 'descobertas reveladas'}
         </p>
       </div>
-      <div ref={revealRef} className={styles.stories}>
+      <div className={styles.stories}>
         {curiosities.map(curiosity => (
           <DiscoveryStory key={curiosity.id} curiosity={curiosity} discovered={discovered.has(curiosity.id)} onDiscover={handleDiscover} />
         ))}

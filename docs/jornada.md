@@ -1,5 +1,8 @@
 # Agora caminhe pelo café
 
+Amplitudes e escopo de medição foram aperfeiçoados na
+[integração de motion design](motion-design.md). O registro da etapa original segue abaixo.
+
 Uma narrativa contínua liga Cultivo, Colheita, Processamento, Torra, Extração e
 Xícara final. As etapas usam fotografias, superfícies de tonalidade variável,
 texturas reais e composições alternadas. O grão percorre a linha vertical e

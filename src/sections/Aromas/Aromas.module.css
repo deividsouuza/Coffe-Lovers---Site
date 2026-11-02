@@ -49,6 +49,9 @@
 }
 
 .panel[hidden] { display: none; }
+.panelContent { display: grid; }
+.aromaDetail { grid-area: 1 / 1; align-self: start; min-width: 0; visibility: hidden; pointer-events: none; }
+.aromaDetail[data-visible='true'] { visibility: visible; pointer-events: auto; }
 .panelTop { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
 .panelTop p { max-width: 14rem; margin: 0; font-size: .625rem; }
 .closeButton { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; padding: 0; border: 1px solid var(--border); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; transition: var(--transition-color); }
@@ -89,8 +92,8 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .activeConnection { animation: revealConnection 650ms var(--ease-out) both; }
-  .panelContent { animation: revealAroma var(--duration-base) var(--ease-out) both; }
+  .activeConnection { animation: revealConnection var(--motion-duration-scene) var(--ease-out) both; }
+  .aromaDetail[data-visible='true'] { animation: revealAroma var(--duration-base) var(--ease-out) both; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -103,11 +106,11 @@
 }
 
 @keyframes revealConnection {
-  from { opacity: 0; }
+  from { opacity: .25; }
   to { opacity: 1; }
 }
 
 @keyframes revealAroma {
-  from { opacity: 0; transform: translateY(5px); }
+  from { opacity: .9; transform: translateY(var(--motion-detail-distance)); }
   to { opacity: 1; transform: translateY(0); }
 }

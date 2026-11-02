@@ -7,13 +7,15 @@ import { Jornada } from './sections/Jornada/Jornada';
 import { Perfis } from './sections/Perfis/Perfis';
 import { Aromas } from './sections/Aromas/Aromas';
 import { Encerramento } from './sections/Encerramento/Encerramento';
+import { useRevealOnScroll } from './hooks/useRevealOnScroll';
 
 export function App() {
+  const narrativeRef = useRevealOnScroll();
   return (
     <>
       <a className="skipLink" href="#conteudo">Pular para o conteúdo</a>
       <SiteHeader />
-      <main id="conteudo" tabIndex={-1}>
+      <main ref={narrativeRef} id="conteudo" tabIndex={-1}>
         <Hero />
         <Curiosidades />
         <Jornada />
