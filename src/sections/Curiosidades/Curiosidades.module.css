@@ -33,7 +33,19 @@
 .storyTitle { max-width: 16ch; margin-block: var(--space-md); font-size: clamp(2rem, 1.65rem + 1.4vw, 3.5rem); }
 .description { max-width: var(--reading-width); color: var(--ink-muted); }
 
-.story[data-layout='fruit'] .imageFrame { aspect-ratio: 4 / 5; border-radius: 45% 45% 2px 2px / 20% 20% 2px 2px; }
+.story[data-layout='fruit'] .imageFrame {
+  /* Ciclo = ida + volta; pan/float em %, escalas sem unidade. */
+  --fruit-camera-cycle: 10;
+  --fruit-camera-pan: .9;
+  --fruit-camera-float: .12;
+  --fruit-camera-scale-from: 1.045;
+  --fruit-camera-scale-to: 1.06;
+  position: relative; aspect-ratio: 4 / 5; border-radius: 45% 45% 2px 2px / 20% 20% 2px 2px;
+}
+.imageFrame[data-camera-playing='true'] img { will-change: transform; }
+.imageFrame[data-fruit-camera] img:focus-visible { outline-offset: -4px; }
+.photoControl { --focus: var(--color-cream); position: absolute; right: var(--space-sm); bottom: var(--space-sm); display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; max-width: calc(100% - 2 * var(--space-sm)); padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-caramel); border-radius: var(--radius-pill); background: var(--color-espresso); color: var(--color-cream); font-size: var(--text-sm); line-height: 1.5; cursor: pointer; }
+.photoControl:hover { border-color: var(--color-cream); }
 .story[data-layout='roast'] .imageFrame { aspect-ratio: 4 / 3; }
 .story[data-layout='plant'] .figure { width: min(100% - 2rem, 20rem); margin-inline: auto; }
 .story[data-layout='plant'] .imageFrame { aspect-ratio: 1; border-radius: 50%; }
@@ -75,6 +87,12 @@
 .nextStep { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--border); }
 
 @media (min-width: 48rem) {
+  .story[data-layout='fruit'] .imageFrame {
+    --fruit-camera-pan: 1.25;
+    --fruit-camera-float: .18;
+    --fruit-camera-scale-from: 1.055;
+    --fruit-camera-scale-to: 1.075;
+  }
   .stories { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 5rem); row-gap: clamp(5rem, 10vw, 9rem); }
   .story[data-layout='fruit'] { grid-column: 1 / -1; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(2rem, 7vw, 7rem); }
   .story[data-layout='fruit'] .figure { max-width: 34rem; }
@@ -92,4 +110,8 @@
 @media (forced-colors: active) {
   .progressDots [data-filled='true'],
   .discoveryState[data-discovered='true'] > span { background: Highlight; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .imageFrame[data-fruit-camera] img { transform: translate3d(calc(var(--fruit-camera-pan) * 1%), calc(var(--fruit-camera-float) * -1%), 0) scale(var(--fruit-camera-scale-from)); }
 }

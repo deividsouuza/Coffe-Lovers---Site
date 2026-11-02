@@ -12,6 +12,8 @@ export const discoveryContent = {
   instruction: 'Toque nos detalhes e descubra o que passa despercebido.',
   statusLabel: 'Seu percurso de descobertas',
   nextLabel: 'Continue pela jornada do café',
+  photoPause: 'Pausar foto',
+  photoResume: 'Animar foto',
 } as const;
 
 // Fontes de cada afirmação ficam junto ao conteúdo, e também são acessíveis na interface.
