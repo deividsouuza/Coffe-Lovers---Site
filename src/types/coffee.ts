@@ -39,6 +39,12 @@ export interface EditorialImage {
   readonly license?: ContentSource;
 }
 
+export interface EditorialVideo {
+  readonly small: string;
+  readonly large: string;
+  readonly credit: ContentSource;
+}
+
 export interface CoffeeCuriosity extends ContentItem {
   readonly layout: 'fruit' | 'roast' | 'plant' | 'espresso';
   readonly kicker: string;
@@ -49,6 +55,7 @@ export interface CoffeeCuriosity extends ContentItem {
   };
   readonly sources: readonly ContentSource[];
   readonly image: EditorialImage;
+  readonly video?: EditorialVideo;
 }
 
 export interface JourneyStage extends ContentItem {

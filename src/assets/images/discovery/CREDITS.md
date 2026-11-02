@@ -21,6 +21,8 @@ e carregamento lazy. As legendas exibem créditos e links para as páginas origi
 - Derivados: `roast-560.webp` e `roast-1120.webp`, 560 × 420 e 1120 × 840 px.
 - Alterações: recorte, redimensionamento e compressão WebP.
 - A foto mostra grãos na bandeja de resfriamento após a torra, como informa a legenda.
+- Ela permanece como poster/fallback do vídeo; os créditos da filmagem estão em
+  [`videos/discovery/CREDITS.md`](../../videos/discovery/CREDITS.md).
 
 ## Planta
 

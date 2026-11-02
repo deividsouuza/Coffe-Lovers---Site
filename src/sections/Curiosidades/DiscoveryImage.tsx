@@ -3,9 +3,10 @@ import type { CoffeeCuriosity } from '../../types/coffee';
 import { Icon } from '../../components/Icon/Icon';
 import { discoveryContent } from '../../data/curiosities';
 import { useFruitPhotoMotion } from '../../hooks/useFruitPhotoMotion';
+import { AmbientVideo } from '../../components/AmbientVideo/AmbientVideo';
 import styles from './Curiosidades.module.css';
 
-export function DiscoveryImage({ image, layout }: Pick<CoffeeCuriosity, 'image' | 'layout'>) {
+export function DiscoveryImage({ image, layout, video }: Pick<CoffeeCuriosity, 'image' | 'layout' | 'video'>) {
   const fruit = layout === 'fruit';
   const photoId = useId();
   const { frameRef, imageRef, paused, showControl, toggle } = useFruitPhotoMotion(fruit);
@@ -16,10 +17,10 @@ export function DiscoveryImage({ image, layout }: Pick<CoffeeCuriosity, 'image' 
   return (
     <figure className={styles.figure}>
       <div ref={frameRef} className={styles.imageFrame} data-fruit-camera={fruit ? 'true' : undefined}>
-        <img ref={imageRef} id={fruit ? photoId : undefined} tabIndex={fruit ? -1 : undefined}
+        {video ? <AmbientVideo media={video} fallback={image} sizes={sizes} /> : <img ref={imageRef} id={fruit ? photoId : undefined} tabIndex={fruit ? -1 : undefined}
           src={image.small} srcSet={`${image.small} 560w, ${image.large} 1120w`}
           sizes={sizes} width={image.width} height={image.height}
-          alt={image.alt} loading="lazy" decoding="async" />
+          alt={image.alt} loading="lazy" decoding="async" />}
         {showControl && <button type="button" className={styles.photoControl} onClick={toggle} aria-controls={photoId}>
           <Icon name={paused ? 'play' : 'pause'} />
           {paused ? discoveryContent.photoResume : discoveryContent.photoPause}
@@ -27,7 +28,10 @@ export function DiscoveryImage({ image, layout }: Pick<CoffeeCuriosity, 'image' 
       </div>
       <figcaption className={styles.caption}>
         <span>{image.caption}</span>
-        <a href={image.credit.href}>Foto: {image.credit.label}</a>
+        {video ? <span className={styles.credits}>
+          <a href={image.credit.href}>Foto: {image.credit.label}</a>
+          <a href={video.credit.href}>Vídeo: {video.credit.label}</a>
+        </span> : <a href={image.credit.href}>Foto: {image.credit.label}</a>}
         {image.license && <a href={image.license.href}>{image.license.label}</a>}
       </figcaption>
     </figure>

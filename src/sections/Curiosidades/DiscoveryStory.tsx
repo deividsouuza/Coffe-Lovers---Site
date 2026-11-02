@@ -10,7 +10,7 @@ interface DiscoveryStoryProps {
 }
 
 export function DiscoveryStory({ curiosity, discovered, onDiscover }: DiscoveryStoryProps) {
-  const image = <DiscoveryImage image={curiosity.image} layout={curiosity.layout} />;
+  const image = <DiscoveryImage image={curiosity.image} layout={curiosity.layout} video={curiosity.video} />;
   const narrative = (
     <div className={styles.storyBody}>
       <p className="eyebrow">{curiosity.kicker}</p>

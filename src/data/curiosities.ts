@@ -6,6 +6,8 @@ import plantSmall from '../assets/images/discovery/plant-560.webp';
 import plantLarge from '../assets/images/discovery/plant-1120.webp';
 import espressoSmall from '../assets/images/discovery/espresso-560.webp';
 import espressoLarge from '../assets/images/discovery/espresso-1120.webp';
+import roastVideoSmall from '../assets/videos/discovery/roast-640.mp4';
+import roastVideoLarge from '../assets/videos/discovery/roast-960.mp4';
 import type { CoffeeCuriosity } from '../types/coffee';
 
 export const discoveryContent = {
@@ -57,6 +59,10 @@ export const curiosities = [
       alt: 'Grãos recém-torrados sendo movimentados na bandeja de resfriamento de um torrador.',
       caption: 'Depois do calor, o cuidado continua no resfriamento.',
       credit: { label: 'Pete Willis · Unsplash', href: 'https://unsplash.com/photos/brown-seeds-nkIgu4Mh7xc' },
+    },
+    video: {
+      small: roastVideoSmall, large: roastVideoLarge,
+      credit: { label: 'Anna Tarazevich · Pexels', href: 'https://www.pexels.com/video/coffee-beans-in-a-cooling-tray-4927236/' },
     },
   },
   {

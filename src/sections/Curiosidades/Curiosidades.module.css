@@ -29,6 +29,7 @@
 .imageFrame img { width: 100%; height: 100%; object-fit: cover; }
 .caption { display: grid; gap: var(--space-2xs); margin-top: var(--space-sm); color: var(--ink-muted); font-size: var(--text-xs); line-height: 1.7; }
 .caption a { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; min-height: 44px; }
+.credits { display: flex; flex-wrap: wrap; gap: 0 var(--space-md); }
 .storyBody { min-width: 0; }
 .storyTitle { max-width: 16ch; margin-block: var(--space-md); font-size: clamp(2rem, 1.65rem + 1.4vw, 3.5rem); }
 .description { max-width: var(--reading-width); color: var(--ink-muted); }
@@ -46,7 +47,7 @@
 .imageFrame[data-fruit-camera] img:focus-visible { outline-offset: -4px; }
 .photoControl { --focus: var(--color-cream); position: absolute; right: var(--space-sm); bottom: var(--space-sm); display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; max-width: calc(100% - 2 * var(--space-sm)); padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-caramel); border-radius: var(--radius-pill); background: var(--color-espresso); color: var(--color-cream); font-size: var(--text-sm); line-height: 1.5; cursor: pointer; }
 .photoControl:hover { border-color: var(--color-cream); }
-.story[data-layout='roast'] .imageFrame { aspect-ratio: 4 / 3; }
+.story[data-layout='roast'] .imageFrame { position: relative; aspect-ratio: 4 / 3; }
 .story[data-layout='plant'] .figure { width: min(100% - 2rem, 20rem); margin-inline: auto; }
 .story[data-layout='plant'] .imageFrame { aspect-ratio: 1; border-radius: 50%; }
 .story[data-layout='plant'] .imageFrame img { object-position: center 38%; }
