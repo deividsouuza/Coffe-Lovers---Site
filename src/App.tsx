@@ -1,4 +1,5 @@
 import { SiteHeader } from './components/SiteHeader/SiteHeader';
+import { PhotoDivider } from './components/PhotoDivider/PhotoDivider';
 import { Hero } from './sections/Hero/Hero';
 import { Curiosidades } from './sections/Curiosidades/Curiosidades';
 import { Jornada } from './sections/Jornada/Jornada';
@@ -15,6 +16,7 @@ export function App() {
         <Hero />
         <Curiosidades />
         <Jornada />
+        <PhotoDivider />
         <Perfis />
         <Aromas />
         <Encerramento />

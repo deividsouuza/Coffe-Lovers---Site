@@ -4,7 +4,7 @@ import { siteContent } from '../../data/siteContent';
 
 export function Curiosidades() {
   return (
-    <Section content={siteContent.curiosidades}>
+    <Section content={siteContent.curiosidades} tone="espresso" divider>
       <ul className="contentList">
         {curiosities.map(({ id, title, description }) => (
           <li key={id}><h3>{title}</h3><p>{description}</p></li>

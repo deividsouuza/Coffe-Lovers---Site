@@ -6,14 +6,88 @@
   --color-cream: #f6eee5;
   --color-beige: #e6d3bf;
   --color-olive: #7d8168;
-  /* Fontes locais de fallback até a etapa de direção visual e tipografia. */
+  --color-cream-light: #fcf8f3;
+  --color-ink-muted: #72594b;
+  --color-on-dark-muted: #d8c2ae;
+  --color-border: #d9c6b3;
+  --color-border-dark: #654638;
+  --color-overlay: rgb(43 19 13 / 65%);
+  --surface: var(--color-cream);
+  --ink: var(--color-espresso);
+  --ink-muted: var(--color-ink-muted);
+  --accent: var(--color-roasted);
+  --border: var(--color-border);
+  --focus: var(--color-roasted);
   --font-editorial: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: clamp(1.0625rem, 0.95rem + 0.3vw, 1.1875rem);
+  --text-display: clamp(2.75rem, 1.75rem + 4vw, 5.75rem);
+  --text-title: clamp(2.25rem, 1.5rem + 2.7vw, 4.125rem);
+  --text-subtitle: clamp(1.625rem, 1.4rem + 0.6vw, 2rem);
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --leading-tight: 1.04;
+  --leading-title: 1.1;
+  --leading-body: 1.8;
+  --tracking-editorial: -0.025em;
+  --tracking-label: 0.16em;
+  --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
+  --space-base: 1rem;
   --space-md: 1.25rem;
+  --space-m: 1.5rem;
   --space-lg: 2rem;
-  --space-section: clamp(3rem, 7vw, 6rem);
-  --page-gutter: clamp(1.25rem, 5vw, 4rem);
-  --content-width: 70rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-section: clamp(4rem, 8vw, 8rem);
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+  --content-width: 76rem;
+  --reading-width: 38rem;
+  --header-height: 5rem;
+  --header-offset: var(--header-height);
+  --border-width: 1px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-pill: 999px;
+  --shadow-soft: 0 4px 20px rgb(43 19 13 / 5%);
+  --shadow-header: 0 1px 0 rgb(43 19 13 / 8%);
+  --duration-fast: 160ms;
+  --duration-base: 260ms;
+  --duration-slow: 420ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --transition-color: color var(--duration-fast) ease, background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+  --layer-header: 20;
+  --layer-skip: 30;
+}
+
+/* Caramelo e oliva são acentos; texto corrido usa pares de maior contraste. */
+[data-tone='espresso'] {
+  color-scheme: dark;
+  --surface: var(--color-espresso);
+  --ink: var(--color-cream);
+  --ink-muted: var(--color-on-dark-muted);
+  --accent: var(--color-caramel);
+  --border: var(--color-border-dark);
+  --focus: var(--color-caramel);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+@media (min-width: 64rem) {
+  :root { --header-height: 6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
 }

@@ -1,0 +1,4 @@
+.divider { display: flex; align-items: center; gap: var(--space-md); width: min(14rem, 60%); margin-bottom: var(--space-xl); color: var(--accent); }
+.divider span { flex: 1; height: 7px; border-top: 1px solid var(--border); border-radius: 50%; }
+.divider span:last-child { transform: rotate(180deg); }
+.divider svg { flex-shrink: 0; }

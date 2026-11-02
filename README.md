@@ -32,14 +32,18 @@ Para instalações reproduzíveis após o clone, use `npm ci`.
 
 ```text
 src/
-  assets/                 # Imagens e fontes, quando adicionadas
+  assets/                 # Fontes WOFF2 locais, licenças e fotografias WebP
   components/
     Section/              # Contêiner semântico compartilhado + CSS Module
     SiteHeader/           # Marca e navegação por âncoras + CSS Module
+    Action/               # Botão ou âncora, com três variantes visuais
+    Icon/                 # Ícones SVG decorativos compartilhados
+    OrganicDivider/       # Divisória artesanal reutilizável
+    PhotoDivider/         # Intervalo fotográfico responsivo
   data/
     coffeeContent.ts      # Curiosidades, jornada, perfis e notas aromáticas
     siteContent.ts        # Textos das seções e navegação
-  hooks/                  # Hooks compartilhados, quando necessários
+  hooks/                  # Comportamento acessível do menu mobile
   sections/
     Hero/
     Curiosidades/
@@ -50,6 +54,7 @@ src/
   styles/
     global.css            # Base responsiva, foco e movimento reduzido
     tokens.css            # Paleta, tipografia e espaçamento
+    fonts.css             # Fontes variáveis locais, com font-display: swap
   types/
     coffee.ts             # Contratos de conteúdo
   App.tsx                 # Composição da experiência
@@ -63,18 +68,33 @@ package-lock.json
 
 ## Limites desta etapa
 
-Esta é a fundação técnica, com conteúdo introdutório e estilos mínimos. A direção
-visual completa, fotografias, fontes, quiz, revelações e animações serão tratados
-nos próximos prompts. Os links existentes navegam para seções reais; conteúdos
-ainda sem interação aparecem como texto, sem controles simulados.
+Esta é a fundação técnica com o design system editorial e o header responsivo.
+As seis seções conservam seus conteúdos introdutórios; a composição completa
+do Hero, quiz, revelações e animações narrativas ficam para próximos prompts.
+Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
+aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
 Os perfis são descrições editoriais. As notas aromáticas são vocabulário sensorial,
 não ingredientes adicionados. Curiosidades científicas ou históricas deverão
 receber fontes verificadas ao serem desenvolvidas.
 
-CSS Modules isolam os estilos dos componentes. Variáveis CSS centralizam o design
-system; por enquanto, as famílias tipográficas usam fallbacks locais, sem downloads.
-Não são necessárias bibliotecas de animação, ícones ou roteamento nesta etapa.
+CSS Modules isolam os estilos dos componentes. Cormorant Garamond e DM Sans
+usam arquivos variáveis locais, sem requisições a serviços de fontes em runtime.
+A fotografia decorativa tem versões WebP de 640 e 1600 px e carregamento lazy.
+Não foram adicionadas dependências de produção nesta etapa.
+
+## Design system
+
+Os contratos e exemplos de uso estão em [docs/design-system.md](docs/design-system.md).
+O sistema centraliza paleta, tamanhos fluidos, espaçamento, bordas, sombras sutis
+e transições em `src/styles/tokens.css`.
+
+`Section` aceita `tone="cream"` ou `tone="espresso"`, e a propriedade `divider`
+inclui uma divisória orgânica. `.container`, `.eyebrow` e `.lead` oferecem os
+padrões de largura, rótulo editorial e texto introdutório.
+
+`Action` usa `href` para navegação e `onClick` para uma ação, com variantes
+`primary`, `secondary` e `text`. Nunca exiba um controle sem destino ou ação.
 
 ## Conferência manual
 
@@ -82,4 +102,21 @@ Não são necessárias bibliotecas de animação, ícones ou roteamento nesta et
 - Navegue com Tab: o primeiro link permite pular para o conteúdo; o foco é visível.
 - Confira a largura de 360 a 430 px, sem rolagem horizontal.
 - Ative a preferência de movimento reduzido: a navegação deixa de usar rolagem suave.
-  O projeto ainda não inclui outras animações.
+  Transições e deslocamentos dos indicadores também são desativados.
+- No mobile, abra o menu e confira Tab/Shift+Tab, Escape, Fechar e navegação.
+- Abra o menu e amplie a janela até 1024 px: o diálogo fecha e o foco vai para a marca.
+
+## Verificações da etapa de design system
+
+TypeScript e build de produção passaram. O build foi verificado em Chrome headless
+nas larguras 360, 390, 430, 768, 1024, 1440 e 1920 px, sem overflow horizontal.
+Foram conferidos o carregamento das fontes, âncoras abaixo do header, foco do menu,
+Escape, fechamento, mudança de breakpoint, skip link e movimento reduzido.
+Também foram conferidos a fotografia lazy, a navegação em janela de 640 × 360 px
+e o layout sem overflow com texto ampliado para 200% em viewport de 390 px.
+A análise automática axe, com regras WCAG A/AA, não encontrou violações nas
+amostras mobile, desktop e menu aberto. Isso não substitui uma auditoria manual
+com leitores de tela ou testes em aparelhos físicos.
+
+As ferramentas de QA foram instaladas apenas no diretório temporário do sistema,
+sem alterar as dependências do projeto.

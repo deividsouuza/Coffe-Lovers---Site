@@ -4,7 +4,7 @@ import { siteContent } from '../../data/siteContent';
 
 export function Aromas() {
   return (
-    <Section content={siteContent.aromas}>
+    <Section content={siteContent.aromas} tone="espresso" divider>
       <dl className="descriptionList">
         {aromaNotes.map(({ id, title, description, examples }) => (
           <div key={id}>

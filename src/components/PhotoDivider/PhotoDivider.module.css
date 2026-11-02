@@ -1,0 +1,8 @@
+.frame { position: relative; background: var(--color-espresso); }
+.frame img { width: 100%; height: clamp(12rem, 30vw, 26rem); object-fit: cover; }
+
+/* Contorno orgânico discreto, sem paralaxe. */
+.frame::before,
+.frame::after { content: ''; position: absolute; inset-inline: 0; height: 8px; background: var(--color-cream); }
+.frame::before { top: -1px; border-radius: 0 0 50% 30%; }
+.frame::after { bottom: -1px; border-radius: 50% 30% 0 0; }

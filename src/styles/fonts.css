@@ -1,0 +1,16 @@
+/* Os subconjuntos latinos incluem os caracteres de português brasileiro. */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../assets/fonts/cormorant-garamond-latin-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../assets/fonts/dm-sans-latin-variable.woff2') format('woff2');
+}
