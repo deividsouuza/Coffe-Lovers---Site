@@ -32,6 +32,7 @@ Para instalações reproduzíveis após o clone, use `npm ci`.
 
 ```text
 src/
+  animations/             # Motor de rolagem da jornada, carregado sob demanda
   assets/                 # Fontes WOFF2 locais, licenças e fotografias WebP
   components/
     Section/              # Contêiner semântico compartilhado + CSS Module
@@ -40,12 +41,14 @@ src/
     Icon/                 # Ícones SVG decorativos compartilhados
     OrganicDivider/       # Divisória artesanal reutilizável
     PhotoDivider/         # Intervalo fotográfico responsivo
+    CoffeeBean/           # Grão editorial compartilhado por Hero e Jornada
   data/
     coffeeContent.ts      # Curiosidades, jornada, perfis e notas aromáticas
     siteContent.ts        # Textos das seções e navegação
     heroContent.ts        # Conteúdo editorial e acessível do Hero
     curiosities.ts        # Descobertas, explicações, fotos e fontes verificadas
-  hooks/                  # Menu, header, movimento do Hero e revelações por scroll
+    journeyContent.ts     # Seis etapas, fotografias e textos da jornada
+  hooks/                  # Menu, header e interações de Hero, Curiosidades e Jornada
   sections/
     Hero/
     Curiosidades/
@@ -71,9 +74,9 @@ package-lock.json
 ## Limites desta etapa
 
 Esta é a fundação técnica com o design system editorial, header responsivo e
-Hero cinematográfico e Descubra o café com revelações interativas. As outras quatro
-seções conservam seus conteúdos introdutórios; quiz e animações da jornada ficam
-para próximos prompts.
+Hero cinematográfico, Descubra o café com revelações interativas e Jornada guiada
+pela rolagem. Perfis, Aromas e Encerramento conservam seus conteúdos introdutórios
+para os próximos prompts.
 Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
 aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
@@ -85,7 +88,8 @@ CSS Modules isolam os estilos dos componentes. Cormorant Garamond e DM Sans
 usam arquivos variáveis locais, sem requisições a serviços de fontes em runtime.
 A fotografia decorativa tem versões WebP de 640 e 1600 px e carregamento lazy.
 A fotografia própria do Hero usa versões WebP de 480, 800 e 1120 px, com prioridade
-de carregamento e texto alternativo. Não foram adicionadas dependências de produção.
+de carregamento e texto alternativo. GSAP e ScrollTrigger são carregados sob
+demanda para o percurso da jornada; as outras interações continuam usando APIs nativas.
 
 ## Hero
 
@@ -106,6 +110,15 @@ pela primeira vez. Créditos das fotos estão visíveis nas legendas.
 
 Conteúdo, referências, estrutura e verificações:
 [docs/curiosidades.md](docs/curiosidades.md).
+
+## Jornada do café
+
+Seis etapas em rolagem natural, conectadas por uma linha contínua. O grão acompanha
+a posição real de leitura, muda de tonalidade e chega à xícara. No desktop, as
+fotos têm movimento discreto; no mobile, permanecem estáveis. A navegação permite
+ir a qualquer etapa. Movimento reduzido preserva fotos, leitura e navegação.
+
+Mecânica, fontes, assets e verificações: [docs/jornada.md](docs/jornada.md).
 
 ## Design system
 
@@ -132,6 +145,17 @@ padrões de largura, rótulo editorial e texto introdutório.
 - No Hero, confira Pausar movimentos, Retomar movimentos e a navegação pela seta.
 - Em Descubra o café, abra e feche os quatro detalhes com toque, Enter e Espaço.
   Ao reabrir, o contador deve manter a descoberta já registrada.
+- Em Jornada, role até a xícara e volte ao cultivo. O grão e o progresso devem
+  acompanhar os dois sentidos. Teste também as seis âncoras da seção.
+
+## Verificações da etapa de Jornada
+
+TypeScript e build passaram. Chrome headless em sete larguras de 360 a 1920 px,
+com ida e volta, saltos rápidos, mudança de breakpoint, conteúdo expandido acima
+da jornada e chegada à xícara conferidos. A posição visual foi comparada com a
+geometria real do percurso. Movimento reduzido, teclado, toque simulado, texto
+ampliado a 200% e análise axe passaram. Mount/unmount repetidos, inclusive durante
+import pendente, terminaram sem ScrollTriggers remanescentes.
 
 ## Verificações da etapa de Curiosidades
 

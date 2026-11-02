@@ -3,14 +3,7 @@ import type { AromaNote, ContentItem } from '../types/coffee';
 // Mantém o ponto de importação anterior para consumidores do conteúdo.
 export { curiosities } from './curiosities';
 
-export const journeyStages = [
-  { id: 'cultivo', title: 'Cultivo', description: 'O começo da jornada, junto à planta e à terra.' },
-  { id: 'colheita', title: 'Colheita', description: 'O encontro com os frutos do cafeeiro.' },
-  { id: 'processamento', title: 'Processamento', description: 'O cuidado com o café depois da colheita.' },
-  { id: 'torra', title: 'Torra', description: 'Um momento de transformação dos grãos.' },
-  { id: 'extracao', title: 'Extração', description: 'O encontro entre a água e o café preparado.' },
-  { id: 'xicara', title: 'Na xícara', description: 'A sua pausa passa a fazer parte da história.' },
-] as const satisfies readonly ContentItem[];
+export { journeyStages } from './journeyContent';
 
 // Estilos editoriais, sem classificação científica ou resultado de quiz.
 export const coffeeProfiles = [

@@ -20,6 +20,18 @@ export interface ContentSource {
   readonly href: string;
 }
 
+export interface EditorialImage {
+  readonly small: string;
+  readonly smallWidth?: number;
+  readonly large: string;
+  readonly width: number;
+  readonly height: number;
+  readonly alt: string;
+  readonly caption: string;
+  readonly credit: ContentSource;
+  readonly license?: ContentSource;
+}
+
 export interface CoffeeCuriosity extends ContentItem {
   readonly layout: 'fruit' | 'roast' | 'plant' | 'espresso';
   readonly kicker: string;
@@ -29,14 +41,13 @@ export interface CoffeeCuriosity extends ContentItem {
     readonly text: string;
   };
   readonly sources: readonly ContentSource[];
-  readonly image: {
-    readonly small: string;
-    readonly large: string;
-    readonly width: number;
-    readonly height: number;
-    readonly alt: string;
-    readonly caption: string;
-    readonly credit: ContentSource;
-    readonly license?: ContentSource;
-  };
+  readonly image: EditorialImage;
+}
+
+export interface JourneyStage extends ContentItem {
+  readonly phase: 'cultivation' | 'harvest' | 'processing' | 'roast' | 'extraction' | 'cup';
+  readonly kicker: string;
+  readonly thought: string;
+  readonly beanColor: string;
+  readonly image: EditorialImage;
 }

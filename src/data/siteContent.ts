@@ -18,8 +18,8 @@ export const siteContent = {
   jornada: {
     id: 'jornada',
     eyebrow: '02 · Sua jornada no café',
-    title: 'Um caminho até o seu encontro.',
-    description: 'Acompanhe os momentos que conectam o cultivo à pausa que você vive agora.',
+    title: 'AGORA CAMINHE PELO CAFÉ.',
+    description: 'Da primeira raiz à xícara nas suas mãos. Acompanhe o caminho, as transformações e o cuidado que tornam cada pausa possível.',
   },
   perfis: {
     id: 'perfis',

@@ -23,5 +23,12 @@ IntersectionObserver e Web Animations API, evita animar um artigo com foco e
 cancela os movimentos ativos se a preferência de movimento reduzido for ativada.
 Observer, listener e animações são limpos no unmount.
 
+`useJourneyScroll` carrega o motor GSAP/ScrollTrigger quando a jornada se aproxima
+ou recebe foco. Atualiza React apenas na mudança da etapa ativa; a progressão
+contínua é aplicada pelo motor ao DOM. Seu cleanup cancela o observer inicial,
+remove o listener de foco e reverte o motor. Um import concluído depois do unmount
+não cria instâncias. A medição e os detalhes de ciclo de vida estão em
+`src/animations/createJourneyAnimation.ts` e `docs/jornada.md`.
+
 Animações futuras em JavaScript devem observar `prefers-reduced-motion`, remover
 event listeners e desconectar observers no cleanup de seus efeitos.

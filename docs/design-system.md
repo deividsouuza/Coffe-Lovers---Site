@@ -3,8 +3,9 @@
 Identidade editorial baseada em contraste, espaço e tipografia. Esta etapa aplica
 o sistema à estrutura existente; o Hero já possui composição própria, documentada
 em [hero.md](hero.md). Descubra o café possui composição editorial e detalhes
-interativos, documentados em [curiosidades.md](curiosidades.md). As outras seções
-aguardam seus próximos prompts.
+interativos, documentados em [curiosidades.md](curiosidades.md). A jornada guiada
+pela rolagem está em [jornada.md](jornada.md). Perfis, Aromas e Encerramento aguardam
+seus próximos prompts.
 A imagem de referência não estava disponível nesta
 conversa; a direção segue o briefing textual e a paleta fornecida.
 

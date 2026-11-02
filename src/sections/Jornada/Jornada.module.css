@@ -1,0 +1,94 @@
+.journey {
+  --rail-x: 16px;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: var(--space-section);
+}
+
+.journey:focus-visible,
+.step:focus-visible { outline-offset: -5px; }
+.intro { padding-bottom: var(--space-xl); }
+.intro h2 { max-width: 15ch; margin-block: var(--space-md) var(--space-lg); }
+.instruction { margin-top: var(--space-lg); color: var(--ink-muted); font-size: var(--text-sm); }
+.navigation { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); margin: var(--space-xl) 0 var(--space-md); padding: 0; list-style: none; }
+.navigation a { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; color: var(--ink-muted); font-size: var(--text-sm); text-decoration: none; }
+.navigation a > span { color: var(--accent); font-size: var(--text-xs); }
+.navigation a[aria-current='step'] { color: var(--ink); text-decoration: underline; }
+.navigation a:hover { color: var(--accent); }
+.progress { height: 2px; background: var(--border); }
+.progress > span { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
+.currentStage { margin: var(--space-sm) 0 0; color: var(--ink-muted); font-size: var(--text-xs); }
+.track { position: relative; }
+.path { margin: 0; padding: 0; list-style: none; }
+
+.step {
+  position: relative;
+  isolation: isolate;
+  padding: var(--space-xl) 0 var(--space-2xl) 3.25rem;
+}
+
+.sceneWash { position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: var(--scene-surface, var(--color-espresso)); opacity: 0.55; pointer-events: none; }
+.step[data-phase='cultivation'] { --scene-surface: #293025; }
+.step[data-phase='harvest'] { --scene-surface: #38271b; }
+.step[data-phase='processing'] { --scene-surface: #45362a; }
+.step[data-phase='roast'] { --scene-surface: #32180f; }
+.step[data-phase='extraction'] { --scene-surface: #22120d; }
+.step[data-phase='cup'] { --scene-surface: #2b130d; }
+.composition { display: grid; align-items: center; gap: var(--space-lg); min-width: 0; }
+.narrative { min-width: 0; }
+.stageTitle { margin-block: var(--space-sm) var(--space-md); font-size: clamp(2.25rem, 7.5vw, 4.5rem); }
+.description { max-width: 31rem; color: var(--ink); }
+.thought { max-width: 27rem; margin-top: var(--space-lg); padding-left: var(--space-md); border-left: 1px solid var(--accent); color: var(--ink-muted); font-family: var(--font-editorial); font-size: clamp(1.25rem, 1rem + 0.7vw, 1.75rem); line-height: 1.4; }
+.figure { min-width: 0; margin: 0; }
+.imageFrame { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-roasted); }
+.imageMotion { position: absolute; inset: -6%; }
+.imageMotion img { width: 100%; height: 100%; object-fit: cover; }
+.caption { display: grid; gap: var(--space-2xs); margin-top: var(--space-sm); color: var(--ink-muted); font-size: var(--text-xs); line-height: 1.6; }
+.caption a { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; min-height: 24px; }
+.step[data-phase='cultivation'] .imageFrame { border-radius: 44% 44% 2px 2px / 18% 18% 2px 2px; }
+.step[data-phase='processing'] .imageFrame { aspect-ratio: 16 / 10; }
+.step[data-phase='roast'] .imageFrame { border-radius: 2px 35% 2px 2px / 2px 20% 2px 2px; }
+.step[data-phase='cup'] .imageFrame { aspect-ratio: 1; border-radius: 48% 48% 2px 2px / 25% 25% 2px 2px; }
+.step[data-phase='cup'] img { object-position: 50% 65%; }
+.point { position: absolute; z-index: 2; top: var(--space-xl); left: var(--rail-x); display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; background: var(--color-espresso); color: var(--ink-muted); font-size: 0.625rem; transform: translate(-50%, -50%); }
+.step[data-current='true'] .point { border-color: var(--accent); color: var(--accent); }
+.step[data-passed='true'] .point { color: var(--color-caramel); }
+.step[data-phase='cup'] .point { color: transparent; }
+
+.rail { position: absolute; z-index: 3; top: var(--rail-start, 3rem); bottom: 3rem; left: var(--rail-x); width: 1px; pointer-events: none; }
+.railBase,
+.railFill { position: absolute; inset: 0; width: 1px; background: var(--border); }
+.railFill { background: var(--color-caramel); transform: scaleY(0); transform-origin: top; }
+.travellingBean { display: none; position: absolute; top: -24px; left: -18px; width: 36px; height: 48px; }
+.travellingBean svg { width: 100%; height: 100%; }
+.cupLanding { position: absolute; top: 100%; left: 50%; width: 48px; height: 48px; max-width: none; color: var(--color-caramel); transform: translate(-50%, -50%); }
+.journey[data-journey-ready='true'] .rail { bottom: auto; height: var(--rail-distance); }
+.journey[data-journey-ready='true'][data-motion='full'] .travellingBean { display: block; }
+.closing { position: relative; z-index: 4; padding-top: var(--space-xl); }
+.closing h3 { max-width: 17ch; margin-block: var(--space-md); font-size: var(--text-title); }
+.closing :global(.lead) { margin-bottom: var(--space-xl); }
+.source { display: block; width: fit-content; min-height: 44px; margin-top: var(--space-lg); padding-block: var(--space-sm); color: var(--ink-muted); font-size: var(--text-xs); }
+
+@media (min-width: 64rem) {
+  .journey { --rail-x: 50%; }
+  .intro { padding-bottom: var(--space-2xl); }
+  .step { padding: var(--space-2xl) 0; }
+  .composition { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(6rem, 12vw, 12rem); min-height: min(65svh, 42rem); }
+  .stageTitle { font-size: clamp(2.5rem, 4.3vw, 4.5rem); }
+  .point { top: 50%; width: 34px; height: 34px; }
+  .travellingBean { top: -32px; left: -24px; width: 48px; height: 64px; }
+  .cupLanding { width: 62px; height: 62px; }
+  .step[data-phase='harvest'] .imageFrame { aspect-ratio: 4 / 5; max-height: 36rem; }
+  .step[data-phase='extraction'] .imageFrame { aspect-ratio: 4 / 5; max-height: 36rem; }
+  .step[data-phase='cup'] .imageFrame { max-height: 34rem; }
+  .closing { text-align: center; }
+  .closing h3,
+  .closing :global(.lead),
+  .source { margin-inline: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .travellingBean { display: none !important; }
+  .sceneWash { opacity: 0.55; }
+}

@@ -48,3 +48,11 @@ CC BY-SA 4.0; as demais são fornecidas sob a licença Unsplash.
 
 Autoria, URLs originais, licenças e alterações:
 [images/discovery/CREDITS.md](images/discovery/CREDITS.md).
+
+## Jornada do café
+
+`images/journey/` acrescenta fotografias reais de cultivo, colheita e secagem,
+em WebP de 560 e 1120 px. Os assets menores têm aproximadamente 36, 44 e 40 kB.
+As etapas de torra, extração e xícara reaproveitam imagens locais existentes.
+Todas possuem dimensões reservadas, alt e carregamento lazy. Créditos e licenças:
+[images/journey/CREDITS.md](images/journey/CREDITS.md).
