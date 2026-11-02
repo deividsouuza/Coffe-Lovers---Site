@@ -5,6 +5,7 @@ export const heroContent = {
   eyebrow: 'Cada xícara conta uma história',
   imageAlt: 'Xícara artesanal de espresso com crema dourada e vapor suave, iluminada por uma luz quente, ao lado de grãos de café.',
   imageCaption: 'Aroma que acolhe. Histórias que ficam.',
+  sceneDescription: 'Cena tridimensional de café sendo servido em uma xícara artesanal sobre um pires, com crema em movimento e vapor delicado.',
   beanCaption: 'Tudo começa com um grão.',
   pauseMotion: 'Pausar movimentos',
   resumeMotion: 'Retomar movimentos',

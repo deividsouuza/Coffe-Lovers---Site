@@ -21,7 +21,7 @@ export function Hero() {
           </h1>
           <p className={styles.subtitle}>{siteContent.hero.description}</p>
         </div>
-        <HeroVisual />
+        <HeroVisual enableScene={!hasReducedMotion} animate={motionEnabled} />
         <div className={styles.footer}>
           <a className={styles.scrollLink} href={`#${siteContent.curiosidades.id}`}>
             <span className={styles.scrollCircle}><Icon name="arrow-down" /></span>

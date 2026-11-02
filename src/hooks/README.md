@@ -2,6 +2,13 @@
 
 Hooks compartilhados usam nomes iniciados por `use`.
 
+`useCoffeeScene` integra a cena 3D do Hero por import dinâmico. Cada montagem
+possui um canvas próprio; movimento reduzido, economia de dados e ausência de
+WebGL2 preservam a fotografia. IntersectionObserver, visibilidade da aba e o
+controle de pausa interrompem o loop. ResizeObserver ajusta a câmera e o buffer.
+Perda de contexto ou erro mantém a página navegável. O cleanup remove canvas,
+listeners e observers e libera contexto, geometrias, materiais e texturas.
+
 `useDialogMenu` integra o diálogo nativo do menu mobile: abertura, fechamento,
 foco cíclico com Tab e Shift+Tab, navegação para a seção e bloqueio temporário da
 rolagem do documento. Ao entrar no desktop (64rem), fecha o menu e foca a marca.

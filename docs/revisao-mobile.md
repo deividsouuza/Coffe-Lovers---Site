@@ -1,5 +1,8 @@
 # Revisão técnica mobile · COFFE LOVERS
 
+Este relatório antecede a adição do Hero 3D e não mede seu custo de renderização.
+Veja [hero-3d.md](hero-3d.md) para a implementação e os testes posteriores.
+
 Revisão realizada em 2 de novembro de 2026, sobre a versão anterior `1b053c8`
 e o build com as correções desta etapa. As seis seções, identidade visual,
 conteúdo editorial e memória opcional foram preservados.

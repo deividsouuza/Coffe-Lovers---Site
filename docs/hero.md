@@ -1,5 +1,8 @@
 # Hero · COFFE LOVERS
 
+A apresentação atual inclui uma cena 3D própria, documentada em
+[hero-3d.md](hero-3d.md). A fotografia desta etapa permanece como alternativa leve.
+
 Os tempos e a coordenação atuais foram revisados na
 [integração de motion design](motion-design.md). O registro abaixo descreve a etapa original.
 

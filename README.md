@@ -6,6 +6,9 @@ com seis momentos integrados em uma única página.
 
 Revisão técnica mobile, medições de rede e relatório Lighthouse:
 [docs/revisao-mobile.md](docs/revisao-mobile.md).
+O Hero recebeu posteriormente uma cena 3D; implementação, custo adicional e
+verificações atuais estão em [docs/hero-3d.md](docs/hero-3d.md). A auditoria
+Lighthouse anterior corresponde à versão com fotografia.
 
 ## Executar
 
@@ -36,6 +39,7 @@ Para instalações reproduzíveis após o clone, use `npm ci`.
 ```text
 src/
   animations/             # Jornada sob demanda + leitura dos tokens de movimento
+  three/                  # Cena 3D do Hero, carregada somente quando necessária
   assets/                 # Fontes WOFF2 locais, licenças e fotografias WebP
   components/
     Section/              # Contêiner semântico compartilhado + CSS Module
@@ -105,12 +109,16 @@ demanda para o percurso da jornada; as outras interações continuam usando APIs
 ## Hero
 
 Composição vertical no mobile e assimétrica no desktop, em fundo espresso.
-O conteúdo usa HTML; a fotografia é um asset próprio, sem textos incorporados.
+O conteúdo usa HTML. Uma cena 3D própria apresenta xícara e pires em volume,
+café sendo servido, crema em movimento e vapor delicado. A fotografia anterior
+permanece como apoio durante a carga, em movimento reduzido, economia de dados
+ou indisponibilidade de WebGL2. Three.js é carregado por import dinâmico.
 A entrada suave, o vapor e a reação da foto ao scroll respeitam a preferência
 de movimento reduzido. O visitante também pode pausar os movimentos pelo botão
 da seção. A seta navega para Curiosidades, mantendo foco e destino visíveis.
 
-Implementação, prompt do asset e verificações: [docs/hero.md](docs/hero.md).
+Cena atual e verificações: [docs/hero-3d.md](docs/hero-3d.md).
+Registro original e prompt da fotografia: [docs/hero.md](docs/hero.md).
 
 ## Descubra o café
 
