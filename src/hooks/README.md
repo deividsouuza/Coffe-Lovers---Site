@@ -30,5 +30,11 @@ remove o listener de foco e reverte o motor. Um import concluído depois do unmo
 não cria instâncias. A medição e os detalhes de ciclo de vida estão em
 `src/animations/createJourneyAnimation.ts` e `docs/jornada.md`.
 
+`useCoffeeProfile` mantém a escolha sensorial e a preferência de lembrar no
+dispositivo. A inicialização aceita somente três IDs conhecidos, e as operações
+de localStorage são protegidas por try/catch. Sem opt-in, não escreve dados.
+Ao desativar a memória, remove apenas sua própria chave. Falhas no armazenamento
+não impedem a seleção em React e são informadas pelo componente de memória.
+
 Animações futuras em JavaScript devem observar `prefers-reduced-motion`, remover
 event listeners e desconectar observers no cleanup de seus efeitos.

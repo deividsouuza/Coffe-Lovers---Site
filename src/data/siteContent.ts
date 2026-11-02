@@ -24,8 +24,8 @@ export const siteContent = {
   perfis: {
     id: 'perfis',
     eyebrow: '03 · Seu perfil',
-    title: 'Como você gosta de viver o café?',
-    description: 'Há dias para o conhecido e dias para uma nova descoberta. Qual destes estilos conversa com o seu momento?',
+    title: 'QUAL TIPO DE COFFE LOVER É VOCÊ?',
+    description: 'Escolha pelo que você sente hoje. Seu jeito de apreciar pode mudar a cada pausa — e há beleza em cada descoberta.',
   },
   aromas: {
     id: 'aromas',

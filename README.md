@@ -48,7 +48,8 @@ src/
     heroContent.ts        # Conteúdo editorial e acessível do Hero
     curiosities.ts        # Descobertas, explicações, fotos e fontes verificadas
     journeyContent.ts     # Seis etapas, fotografias e textos da jornada
-  hooks/                  # Menu, header e interações de Hero, Curiosidades e Jornada
+    profileContent.ts     # Perfis sensoriais, imagens e mensagens de seleção
+  hooks/                  # Menu, header, movimentos e seleção com memória opcional
   sections/
     Hero/
     Curiosidades/
@@ -75,8 +76,8 @@ package-lock.json
 
 Esta é a fundação técnica com o design system editorial, header responsivo e
 Hero cinematográfico, Descubra o café com revelações interativas e Jornada guiada
-pela rolagem. Perfis, Aromas e Encerramento conservam seus conteúdos introdutórios
-para os próximos prompts.
+pela rolagem. Perfis oferece seleção sensorial e afetiva com memória opcional.
+Aromas e Encerramento conservam seus conteúdos introdutórios para os próximos prompts.
 Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
 aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
@@ -120,6 +121,15 @@ ir a qualquer etapa. Movimento reduzido preserva fotos, leitura e navegação.
 
 Mecânica, fontes, assets e verificações: [docs/jornada.md](docs/jornada.md).
 
+## Seu perfil
+
+Três atmosferas com imagens próprias, notas e textos afetivos: Suave e delicado,
+Intenso e marcante e Aromático e surpreendente. A escolha é livre e pode mudar
+quantas vezes o visitante quiser. A memória é opcional e guarda somente o ID do
+perfil no dispositivo; se o armazenamento estiver bloqueado, a escolha ainda funciona.
+
+Comportamento, persistência, assets e verificações: [docs/perfis.md](docs/perfis.md).
+
 ## Design system
 
 Os contratos e exemplos de uso estão em [docs/design-system.md](docs/design-system.md).
@@ -147,6 +157,17 @@ padrões de largura, rótulo editorial e texto introdutório.
   Ao reabrir, o contador deve manter a descoberta já registrada.
 - Em Jornada, role até a xícara e volte ao cultivo. O grão e o progresso devem
   acompanhar os dois sentidos. Teste também as seis âncoras da seção.
+- Em Perfis, alterne entre as três atmosferas com toque ou setas do teclado.
+  Ative Lembrar minha escolha neste dispositivo, recarregue e confira a restauração.
+  Desative a opção e recarregue: a seleção deve voltar ao estado inicial.
+
+## Verificações da etapa de Perfis
+
+TypeScript e build passaram. Os três perfis foram verificados em sete larguras de
+360 a 1920 px, com teclado, toque simulado, foco, imagens, notas e memória opcional.
+Persistência, remoção da chave, dados inválidos, armazenamento bloqueado, movimento
+reduzido e animações desligadas passaram. Texto ampliado a 200% sem overflow e
+análise automática axe sem violações nas amostras mobile e desktop.
 
 ## Verificações da etapa de Jornada
 

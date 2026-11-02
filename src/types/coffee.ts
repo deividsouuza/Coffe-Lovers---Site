@@ -51,3 +51,14 @@ export interface JourneyStage extends ContentItem {
   readonly beanColor: string;
   readonly image: EditorialImage;
 }
+
+export type CoffeeProfileId = 'suave' | 'intenso' | 'aromatico';
+
+export interface CoffeeProfile extends ContentItem {
+  readonly id: CoffeeProfileId;
+  readonly hint: string;
+  readonly atmosphere: string;
+  readonly notes: readonly string[];
+  readonly affection: string;
+  readonly image: EditorialImage;
+}

@@ -1,16 +1,11 @@
-import type { AromaNote, ContentItem } from '../types/coffee';
+import type { AromaNote } from '../types/coffee';
 
 // Mantém o ponto de importação anterior para consumidores do conteúdo.
 export { curiosities } from './curiosities';
 
 export { journeyStages } from './journeyContent';
 
-// Estilos editoriais, sem classificação científica ou resultado de quiz.
-export const coffeeProfiles = [
-  { id: 'classico', title: 'O clássico', description: 'Encontra conforto nos rituais que já fazem parte do seu dia.' },
-  { id: 'explorador', title: 'O explorador', description: 'Gosta de conhecer novos preparos e descobrir outras possibilidades.' },
-  { id: 'contemplativo', title: 'O contemplativo', description: 'Aprecia os detalhes e reserva tempo para sentir cada gole.' },
-] as const satisfies readonly ContentItem[];
+export { coffeeProfiles } from './profileContent';
 
 // Referências de vocabulário sensorial; não representam ingredientes adicionados.
 export const aromaNotes = [

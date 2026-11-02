@@ -56,3 +56,15 @@ em WebP de 560 e 1120 px. Os assets menores têm aproximadamente 36, 44 e 40 kB.
 As etapas de torra, extração e xícara reaproveitam imagens locais existentes.
 Todas possuem dimensões reservadas, alt e carregamento lazy. Créditos e licenças:
 [images/journey/CREDITS.md](images/journey/CREDITS.md).
+
+## Atmosferas de Perfis
+
+`images/profiles/` contém três imagens próprias criadas com imagegen integrado:
+suave/floral, intenso/chocolate e aromático/frutas. As versões WebP têm 480 e
+960 px; as menores pesam aproximadamente 24–38 kB. As imagens são locais e lazy.
+Os thumbnails são decorativos; a cena ativa tem alt, e as inativas são ocultadas
+de leitores de tela. Flores, chocolate e frutas ilustram referências de atmosfera,
+sem representar ingredientes adicionados à bebida.
+
+Assets, pesos e prompts finais:
+[images/profiles/README.md](images/profiles/README.md).
