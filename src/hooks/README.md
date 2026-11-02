@@ -36,5 +36,10 @@ de localStorage são protegidas por try/catch. Sem opt-in, não escreve dados.
 Ao desativar a memória, remove apenas sua própria chave. Falhas no armazenamento
 não impedem a seleção em React e são informadas pelo componente de memória.
 
+`useAromaExplorer` permite alternar entre seis aromas ou limpar a escolha. Mantém
+referências dos acionadores para devolver o foco ao fechar o painel e trata Escape
+apenas dentro da seção. A seleção fica em memória, sem persistência nem listeners
+globais. As animações de conexão e painel são CSS e respeitam movimento reduzido.
+
 Animações futuras em JavaScript devem observar `prefers-reduced-motion`, remover
 event listeners e desconectar observers no cleanup de seus efeitos.

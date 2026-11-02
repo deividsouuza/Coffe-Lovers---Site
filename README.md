@@ -49,6 +49,7 @@ src/
     curiosities.ts        # Descobertas, explicações, fotos e fontes verificadas
     journeyContent.ts     # Seis etapas, fotografias e textos da jornada
     profileContent.ts     # Perfis sensoriais, imagens e mensagens de seleção
+    aromaContent.ts       # Seis aromas, descrições, fontes e geometria do mapa
   hooks/                  # Menu, header, movimentos e seleção com memória opcional
   sections/
     Hero/
@@ -77,12 +78,13 @@ package-lock.json
 Esta é a fundação técnica com o design system editorial, header responsivo e
 Hero cinematográfico, Descubra o café com revelações interativas e Jornada guiada
 pela rolagem. Perfis oferece seleção sensorial e afetiva com memória opcional.
-Aromas e Encerramento conservam seus conteúdos introdutórios para os próximos prompts.
+Aromas oferece um mapa orgânico com seis referências sensoriais exploráveis.
+Encerramento conserva seu conteúdo introdutório para o próximo prompt.
 Os links navegam para seções reais. O menu mobile abre e fecha, mantém o foco,
 aceita Escape e fecha ao navegar ou mudar para a largura de desktop.
 
-Os perfis são descrições editoriais. As notas aromáticas são vocabulário sensorial,
-não ingredientes adicionados. As curiosidades implementadas têm fontes botânicas
+Os perfis são descrições editoriais. As notas aromáticas são vocabulário sensorial
+e não indicam, por si só, ingredientes adicionados. As curiosidades têm fontes botânicas
 e científicas acessíveis na interface e na documentação.
 
 CSS Modules isolam os estilos dos componentes. Cormorant Garamond e DM Sans
@@ -130,6 +132,16 @@ perfil no dispositivo; se o armazenamento estiver bloqueado, a escolha ainda fun
 
 Comportamento, persistência, assets e verificações: [docs/perfis.md](docs/perfis.md).
 
+## Mapa de aromas
+
+Um grão central conecta seis ilustrações próprias por curvas orgânicas. Toque,
+Enter ou Espaço selecionam um aroma; a conexão e o painel acompanham a escolha.
+O visitante pode trocar a seleção, tocar novamente para fechar, usar o botão de
+fechamento ou Escape. O painel reúne uma descrição curta, referências sensoriais
+e um convite afetivo. A explicação científica e as fontes permanecem visíveis.
+
+Conteúdo, componentes e verificações: [docs/aromas.md](docs/aromas.md).
+
 ## Design system
 
 Os contratos e exemplos de uso estão em [docs/design-system.md](docs/design-system.md).
@@ -160,6 +172,19 @@ padrões de largura, rótulo editorial e texto introdutório.
 - Em Perfis, alterne entre as três atmosferas com toque ou setas do teclado.
   Ative Lembrar minha escolha neste dispositivo, recarregue e confira a restauração.
   Desative a opção e recarregue: a seleção deve voltar ao estado inicial.
+- Em Aromas, explore as seis referências. Confira a ilustração contextual, o
+  destaque e o texto do painel. Feche pelo mesmo aroma, botão Fechar ou Escape.
+  Ao fechar pelo painel, o foco deve voltar ao aroma selecionado, visível na tela.
+
+## Verificações da etapa de Aromas
+
+TypeScript e build passaram. As seis seleções foram verificadas em oito larguras
+de 320 a 1920 px, sem overflow horizontal nem sobreposição de áreas de toque.
+Teclado, toque simulado, troca de ilustração, fechamento, foco, âncora seguinte,
+movimento reduzido e animações desligadas passaram. Texto ampliado a 200% em
+390 px e análise automática axe dos seis estados em 360, 390 e 1440 px passaram.
+As verificações de navegador usam Chrome headless; não substituem testes em
+aparelhos físicos e com leitores de tela.
 
 ## Verificações da etapa de Perfis
 

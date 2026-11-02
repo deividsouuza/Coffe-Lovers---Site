@@ -11,8 +11,13 @@ export interface SectionContent {
   readonly description: string;
 }
 
+export type AromaId = 'chocolate' | 'caramelo' | 'castanhas' | 'citricos' | 'flores' | 'especiarias';
+
 export interface AromaNote extends ContentItem {
+  readonly id: AromaId;
   readonly examples: readonly string[];
+  readonly invitation: string;
+  readonly accent: string;
 }
 
 export interface ContentSource {

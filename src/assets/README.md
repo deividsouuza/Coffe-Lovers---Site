@@ -68,3 +68,12 @@ sem representar ingredientes adicionados à bebida.
 
 Assets, pesos e prompts finais:
 [images/profiles/README.md](images/profiles/README.md).
+
+## Ilustrações do mapa de aromas
+
+As seis ilustrações originais ficam em código no componente
+`src/sections/Aromas/AromaIllustration.tsx`. Cada desenho é usado no mapa e no
+painel ampliado, sem bitmap ou requisição adicional. O grão central reaproveita
+`CoffeeBean`, e as conexões são curvas SVG próprias. Os desenhos são decorativos;
+nomes, estados e descrições acessíveis estão nos controles HTML e no painel.
+O mapa não reproduz a roda gráfica de sabores da SCA/WCR.

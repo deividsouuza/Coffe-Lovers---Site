@@ -30,8 +30,8 @@ export const siteContent = {
   aromas: {
     id: 'aromas',
     eyebrow: '04 · Mapa de aromas',
-    title: 'Dê espaço aos sentidos.',
-    description: 'Explore palavras e lembranças que podem ajudar a descrever sua experiência com o café.',
+    title: 'O CAFÉ ESCONDE MUITO MAIS DO QUE VOCÊ IMAGINA.',
+    description: 'Entre um aroma e uma lembrança, existe um universo para explorar. Aproxime os sentidos e descubra outras formas de perceber a sua xícara.',
   },
   encerramento: {
     id: 'pausa',
